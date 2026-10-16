@@ -1,0 +1,3362 @@
+<!doctype html>
+<html lang="vi" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Không Gian Văn Hóa Hồ Chí Minh</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Cinzel, Playfair Display, Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,400;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                red: "#991B1B",
+                crimson: "#B91C1C",
+                darkred: "#5A0E0E",
+                deep: "#3F0708",
+                gold: "#D97706",
+                goldlight: "#FDE68A",
+                goldmetal: "#F59E0B",
+                cream: "#FBF8F3",
+                creamdark: "#F3EDE2",
+              },
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              serif: ['"Playfair Display"', "serif"],
+              display: ["Cinzel", "serif"],
+            },
+            boxShadow: {
+              lux: "0 10px 30px -5px rgba(90, 14, 14, 0.12), 0 4px 10px -2px rgba(217, 119, 6, 0.08)",
+              luxHover:
+                "0 22px 40px -10px rgba(90, 14, 14, 0.22), 0 0 20px rgba(245, 158, 11, 0.25)",
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      /* Thanh cuộn trang nhã */
+      ::-webkit-scrollbar {
+        width: 7px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f3ede2;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #991b1b;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #5a0e0e;
+      }
+
+      /* Card styling & Shimmer effect */
+      .lotus-card {
+        background: #ffffff;
+        border: 1px solid #ebd9c0;
+        transition: all 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+        position: relative;
+      }
+      .lotus-card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        border: 1.5px solid transparent;
+        transition: border-color 0.3s ease;
+        pointer-events: none;
+      }
+      .lotus-card:hover {
+        transform: translateY(-6px);
+        border-color: #d97706;
+      }
+      .lotus-card:hover::after {
+        border-color: rgba(245, 158, 11, 0.45);
+      }
+
+      /* ===== Thanh điều hướng Hiện đại & Chống mất chữ ===== */
+      .site-header {
+        background: linear-gradient(
+          135deg,
+          rgba(63, 7, 8, 0.95) 0%,
+          rgba(90, 14, 14, 0.92) 50%,
+          rgba(63, 7, 8, 0.95) 100%
+        );
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border-bottom: 1px solid rgba(245, 158, 11, 0.25);
+        box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.5);
+        position: relative;
+        transition: all 0.3s ease;
+      }
+      .site-header::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 1.5px;
+        background: linear-gradient(
+          90deg,
+          transparent 0%,
+          rgba(251, 191, 36, 0.3) 15%,
+          #fbbf24 50%,
+          rgba(251, 191, 36, 0.3) 85%,
+          transparent 100%
+        );
+        pointer-events: none;
+      }
+      .nav-scroll {
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        -webkit-overflow-scrolling: touch;
+      }
+      .nav-scroll::-webkit-scrollbar {
+        display: none;
+      }
+      /* Tối ưu cảm ứng thanh tua audio trên điện thoại */
+      input[type="range"] {
+        touch-action: pan-x;
+      }
+      input[type="range"]::-webkit-slider-thumb {
+        width: 18px;
+        height: 18px;
+        border-radius: 9999px;
+        background: #991b1b;
+        border: 2px solid #fde68a;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+        cursor: pointer;
+      }
+      .nav-btn {
+        white-space: nowrap !important;
+        flex-shrink: 0 !important;
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        padding: 0.42rem 0.75rem;
+        border-radius: 9999px;
+        font-size: 0.72rem;
+        letter-spacing: 0.03em;
+        font-weight: 600;
+        color: rgba(254, 243, 199, 0.85);
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(245, 158, 11, 0.18);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
+        transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+        cursor: pointer;
+        user-select: none;
+      }
+      .nav-btn:hover {
+        color: #fef08a;
+        background: linear-gradient(
+          135deg,
+          rgba(245, 158, 11, 0.2) 0%,
+          rgba(217, 119, 6, 0.12) 100%
+        );
+        border-color: rgba(245, 158, 11, 0.5);
+        box-shadow: 0 3px 12px -2px rgba(245, 158, 11, 0.25);
+        transform: translateY(-1px);
+      }
+      .nav-btn:active {
+        transform: translateY(0);
+      }
+      .nav-btn.nav-item-active {
+        color: #fffbeb !important;
+        font-weight: 700;
+        background: linear-gradient(
+          135deg,
+          rgba(245, 158, 11, 0.35) 0%,
+          rgba(185, 28, 28, 0.55) 100%
+        );
+        border-color: #f59e0b;
+        box-shadow:
+          0 0 14px rgba(245, 158, 11, 0.38),
+          inset 0 1px 1px rgba(255, 255, 255, 0.35);
+        transform: translateY(-1px);
+      }
+      .nav-btn.nav-item-active::after {
+        content: "";
+        position: absolute;
+        bottom: -3px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 14px;
+        height: 2px;
+        border-radius: 9999px;
+        background: #fde68a;
+        box-shadow: 0 0 6px #f59e0b;
+      }
+      .m-num {
+        width: 1.6rem;
+        height: 1.6rem;
+        flex-shrink: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 9999px;
+        font-size: 0.7rem;
+        font-weight: 800;
+        color: #3f0708;
+        background: linear-gradient(135deg, #f59e0b, #fde68a);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      }
+      .m-nav-btn {
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+        text-align: left;
+        padding: 0.65rem 0.85rem;
+        font-size: 0.82rem;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.92);
+        border: 1px solid rgba(245, 158, 11, 0.16);
+        border-radius: 0.75rem;
+        background: rgba(255, 255, 255, 0.04);
+        transition: all 0.22s ease;
+      }
+      .m-nav-btn:hover {
+        background: rgba(245, 158, 11, 0.14);
+        border-color: rgba(245, 158, 11, 0.45);
+        color: #fde68a;
+      }
+      .m-nav-btn.nav-item-active {
+        color: #fffbeb;
+        font-weight: 700;
+        background: linear-gradient(
+          135deg,
+          rgba(245, 158, 11, 0.28) 0%,
+          rgba(185, 28, 28, 0.45) 100%
+        );
+        border-color: #f59e0b;
+        box-shadow: 0 0 12px rgba(245, 158, 11, 0.3);
+      }
+
+      /* Sóng âm động */
+      @keyframes pulse-wave {
+        0%,
+        100% {
+          height: 6px;
+        }
+        50% {
+          height: 26px;
+        }
+      }
+      .wave-bar {
+        animation: pulse-wave 1.2s infinite ease-in-out;
+      }
+      .wave-bar:nth-child(2) {
+        animation-delay: 0.15s;
+      }
+      .wave-bar:nth-child(3) {
+        animation-delay: 0.3s;
+      }
+      .wave-bar:nth-child(4) {
+        animation-delay: 0.45s;
+      }
+      .wave-bar:nth-child(5) {
+        animation-delay: 0.6s;
+      }
+
+      /* Hoa văn chìm sang trọng */
+      .bg-lotus-pattern {
+        background-color: #fbf8f3;
+        background-image:
+          radial-gradient(#d97706 0.75px, transparent 0.75px),
+          radial-gradient(#991b1b 0.75px, #fbf8f3 0.75px);
+        background-size: 36px 36px;
+        background-position:
+          0 0,
+          18px 18px;
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-lotus-pattern text-slate-800 antialiased font-sans min-h-screen flex flex-col selection:bg-brand-crimson selection:text-white"
+  >
+    <!-- HEADER ĐẬM CHẤT TRUYỀN THỐNG TRANG TRỌNG (HIỆN ĐẠI & KHÔNG MẤT CHỮ) -->
+    <header id="site-header" class="site-header sticky top-0 z-50 text-white">
+      <div class="max-w-[1440px] mx-auto px-3 sm:px-6">
+        <div class="flex items-center justify-between gap-3 h-16 sm:h-18">
+          <!-- Logo & Tiêu đề chính -->
+          <a
+            href="javascript:void(0)"
+            onclick="navigateTo('home')"
+            class="flex items-center gap-2.5 sm:gap-3 shrink-0 group py-1 select-none"
+          >
+            <div
+              class="w-9 h-9 sm:w-10 sm:h-10 shrink-0 rounded-full bg-gradient-to-tr from-amber-500 via-amber-400 to-amber-200 flex items-center justify-center text-brand-deep shadow-[0_0_14px_rgba(245,158,11,0.38)] ring-2 ring-amber-300/50 group-hover:scale-105 group-hover:ring-amber-300/80 group-hover:shadow-[0_0_20px_rgba(245,158,11,0.6)] transition-all duration-300"
+            >
+              <i
+                class="fa-solid fa-star text-xs sm:text-sm drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]"
+              ></i>
+            </div>
+            <div class="flex flex-col min-w-0 leading-tight">
+              <span
+                class="text-[10px] sm:text-[13px] 2xl:text-sm font-display font-bold tracking-wider text-amber-200 group-hover:text-amber-300 uppercase transition-colors drop-shadow leading-snug sm:leading-tight"
+              >
+                KHÔNG GIAN VĂN HÓA HỒ CHÍ MINH
+              </span>
+              <span
+                class="text-[8px] sm:text-[9.5px] 2xl:text-[10px] text-amber-100/75 tracking-widest uppercase font-serif mt-0.5"
+              >
+                Hành Trình Lịch Sử &amp; Con Số Diệu Kỳ
+              </span>
+            </div>
+          </a>
+
+          <!-- Desktop Menu 10 Trang (Dạng Track Cuộn Hiện Đại, Tuyệt Đối Không Bị Mất Chữ) -->
+          <div
+            class="hidden lg:flex items-center gap-1.5 min-w-0 flex-1 justify-end max-w-[980px]"
+          >
+            <!-- Nút cuộn trái khi màn hình thu hẹp -->
+            <button
+              type="button"
+              onclick="scrollNavTrack(-180)"
+              title="Cuộn sang trái"
+              class="hidden xl:flex shrink-0 w-6 h-6 rounded-full bg-white/[0.08] hover:bg-amber-500/25 border border-amber-300/25 text-amber-200 hover:text-amber-100 items-center justify-center transition-all active:scale-90"
+              aria-label="Cuộn trái danh sách thẻ"
+            >
+              <i class="fa-solid fa-chevron-left text-[9px]"></i>
+            </button>
+
+            <!-- Khung danh sách thẻ không bao giờ mất chữ -->
+            <nav
+              id="main-desktop-nav"
+              class="nav-scroll flex items-center gap-1.5 overflow-x-auto py-1 px-1 scroll-smooth"
+              aria-label="Điều hướng chính"
+            >
+              <button
+                onclick="navigateTo('home')"
+                id="nav-btn-home"
+                data-page="home"
+                class="nav-btn nav-item-active"
+              >
+                <i class="fa-solid fa-landmark text-[10px] text-amber-300"></i>
+                TRANG CHỦ
+              </button>
+              <button
+                onclick="navigateTo('conclusion')"
+                id="nav-btn-conclusion"
+                data-page="conclusion"
+                class="nav-btn font-bold text-amber-200 border-amber-400/40 bg-amber-500/10 hover:bg-amber-500/20"
+              >
+                <i
+                  class="fa-solid fa-feather-pointed text-[10px] text-amber-300"
+                ></i>
+                LỜI KẾT
+              </button>
+              <span
+                class="w-[1px] h-3.5 bg-amber-400/20 shrink-0 mx-0.5"
+                aria-hidden="true"
+              ></span>
+              <button
+                onclick="navigateTo('card-9')"
+                id="nav-btn-card-9"
+                data-page="card-9"
+                class="nav-btn"
+              >
+                THẺ 9 (1945–1969)
+              </button>
+              <button
+                onclick="navigateTo('card-8')"
+                id="nav-btn-card-8"
+                data-page="card-8"
+                class="nav-btn"
+              >
+                THẺ 8 (1969)
+              </button>
+              <button
+                onclick="navigateTo('card-7')"
+                id="nav-btn-card-7"
+                data-page="card-7"
+                class="nav-btn"
+              >
+                THẺ 7 (TRỒNG NGƯỜI)
+              </button>
+              <button
+                onclick="navigateTo('card-6')"
+                id="nav-btn-card-6"
+                data-page="card-6"
+                class="nav-btn"
+              >
+                THẺ 6 (79 MÙA XUÂN)
+              </button>
+              <button
+                onclick="navigateTo('card-5')"
+                id="nav-btn-card-5"
+                data-page="card-5"
+                class="nav-btn"
+              >
+                THẺ 5 (5 ĐIỀU DẠY)
+              </button>
+              <button
+                onclick="navigateTo('card-4')"
+                id="nav-btn-card-4"
+                data-page="card-4"
+                class="nav-btn"
+              >
+                THẺ 4 (NGÀY ĐỘC LẬP)
+              </button>
+              <button
+                onclick="navigateTo('card-3')"
+                id="nav-btn-card-3"
+                data-page="card-3"
+                class="nav-btn"
+              >
+                THẺ 3 (PÁC BÓ)
+              </button>
+              <button
+                onclick="navigateTo('card-2')"
+                id="nav-btn-card-2"
+                data-page="card-2"
+                class="nav-btn"
+              >
+                THẺ 2 (NĂM 1911)
+              </button>
+              <button
+                onclick="navigateTo('card-1')"
+                id="nav-btn-card-1"
+                data-page="card-1"
+                class="nav-btn"
+              >
+                THẺ 1 (QUÊ HƯƠNG)
+              </button>
+            </nav>
+
+            <!-- Nút cuộn phải khi màn hình thu hẹp -->
+            <button
+              type="button"
+              onclick="scrollNavTrack(180)"
+              title="Cuộn sang phải"
+              class="hidden xl:flex shrink-0 w-6 h-6 rounded-full bg-white/[0.08] hover:bg-amber-500/25 border border-amber-300/25 text-amber-200 hover:text-amber-100 items-center justify-center transition-all active:scale-90"
+              aria-label="Cuộn phải danh sách thẻ"
+            >
+              <i class="fa-solid fa-chevron-right text-[9px]"></i>
+            </button>
+          </div>
+
+          <!-- Nút Menu Di Động (hiện đại, phản hồi chạm mượt) -->
+          <button
+            id="mobile-menu-toggle"
+            onclick="toggleMobileMenu()"
+            class="lg:hidden shrink-0 w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-xl border border-amber-400/30 bg-white/[0.06] text-amber-200 hover:bg-amber-500/20 hover:text-amber-300 hover:border-amber-400/60 active:scale-95 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-300 shadow-sm"
+            aria-label="Mở menu"
+            aria-expanded="false"
+            aria-controls="mobileMenu"
+          >
+            <i id="mobile-menu-icon" class="fa-solid fa-bars text-base"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Floating Drawer Menu (Kính mờ sang trọng, 100% không mất chữ) -->
+      <div
+        id="mobileMenu"
+        class="hidden lg:hidden border-t border-amber-500/20 bg-brand-deep/98 backdrop-blur-2xl px-4 py-3 shadow-2xl transition-all"
+      >
+        <div class="max-h-[calc(100vh-5rem)] overflow-y-auto space-y-2 py-1">
+          <button
+            onclick="
+              navigateTo('home');
+              toggleMobileMenu();
+            "
+            id="m-nav-btn-home"
+            data-page="home"
+            class="m-nav-btn nav-item-active w-full font-semibold shadow-sm"
+          >
+            <i class="fa-solid fa-landmark w-5 text-center text-amber-300"></i>
+            Trang chủ
+          </button>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-1.5 pt-1">
+            <button
+              onclick="
+                navigateTo('card-1');
+                toggleMobileMenu();
+              "
+              id="m-nav-btn-card-1"
+              data-page="card-1"
+              class="m-nav-btn"
+            >
+              <span class="m-num">1</span> Thẻ 1 – Quê hương Bác
+            </button>
+            <button
+              onclick="
+                navigateTo('card-2');
+                toggleMobileMenu();
+              "
+              id="m-nav-btn-card-2"
+              data-page="card-2"
+              class="m-nav-btn"
+            >
+              <span class="m-num">2</span> Thẻ 2 – Ra đi tìm đường cứu nước
+            </button>
+            <button
+              onclick="
+                navigateTo('card-3');
+                toggleMobileMenu();
+              "
+              id="m-nav-btn-card-3"
+              data-page="card-3"
+              class="m-nav-btn"
+            >
+              <span class="m-num">3</span> Thẻ 3 – Trở về Pác Bó
+            </button>
+            <button
+              onclick="
+                navigateTo('card-4');
+                toggleMobileMenu();
+              "
+              id="m-nav-btn-card-4"
+              data-page="card-4"
+              class="m-nav-btn"
+            >
+              <span class="m-num">4</span> Thẻ 4 – Ngày Độc lập
+            </button>
+            <button
+              onclick="
+                navigateTo('card-5');
+                toggleMobileMenu();
+              "
+              id="m-nav-btn-card-5"
+              data-page="card-5"
+              class="m-nav-btn"
+            >
+              <span class="m-num">5</span> Thẻ 5 – Năm điều Bác Hồ dạy
+            </button>
+            <button
+              onclick="
+                navigateTo('card-6');
+                toggleMobileMenu();
+              "
+              id="m-nav-btn-card-6"
+              data-page="card-6"
+              class="m-nav-btn"
+            >
+              <span class="m-num">6</span> Thẻ 6 – 79 mùa xuân
+            </button>
+            <button
+              onclick="
+                navigateTo('card-7');
+                toggleMobileMenu();
+              "
+              id="m-nav-btn-card-7"
+              data-page="card-7"
+              class="m-nav-btn"
+            >
+              <span class="m-num">7</span> Thẻ 7 – Trồng người
+            </button>
+            <button
+              onclick="
+                navigateTo('card-8');
+                toggleMobileMenu();
+              "
+              id="m-nav-btn-card-8"
+              data-page="card-8"
+              class="m-nav-btn"
+            >
+              <span class="m-num">8</span> Thẻ 8 – Năm 1969
+            </button>
+            <button
+              onclick="
+                navigateTo('card-9');
+                toggleMobileMenu();
+              "
+              id="m-nav-btn-card-9"
+              data-page="card-9"
+              class="m-nav-btn"
+            >
+              <span class="m-num">9</span> Thẻ 9 – Chặng đường 1945–1969
+            </button>
+            <button
+              onclick="
+                navigateTo('conclusion');
+                toggleMobileMenu();
+              "
+              id="m-nav-btn-conclusion"
+              data-page="conclusion"
+              class="m-nav-btn col-span-1 sm:col-span-2 font-bold text-amber-200 border-amber-400/40 bg-amber-500/15 hover:bg-amber-500/25"
+            >
+              <span
+                class="m-num bg-gradient-to-tr from-amber-400 to-amber-200 text-brand-deep shadow-sm"
+              >
+                <i class="fa-solid fa-feather-pointed text-[10px]"></i>
+              </span>
+              LỜI KẾT – TỔ TOÁN NGUYỄN HIỀN
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="app-container" class="flex-grow">
+      <!-- ================= SECTION: TRANG CHỦ ================= -->
+      <section id="page-home" class="page-view">
+        <!-- Banner Hero với khung viền hoàng gia -->
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 pt-6 sm:pt-10">
+          <div
+            class="relative w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-2 border-amber-300/40 min-h-[220px] py-8 sm:py-10 sm:aspect-[25/8] bg-gradient-to-r from-brand-darkred via-brand-red to-brand-darkred flex items-center justify-center group"
+          >
+            <!-- Ảnh nền -->
+            <div
+              class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+              style="
+                background-image: url(&quot;./src/img/banner-trangchu.png&quot;);
+              "
+            ></div>
+
+            <!-- Lớp phủ đa tầng bảo đảm độ tương phản chữ -->
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/30"
+            ></div>
+            <div
+              class="absolute inset-0 ring-1 ring-inset ring-amber-400/30 rounded-3xl pointer-events-none"
+            ></div>
+
+            <!-- Nội dung trung tâm banner -->
+            <div class="relative z-10 text-center px-4 max-w-3xl text-white">
+              <span
+                class="inline-flex items-center gap-2 px-4 py-1.5 bg-brand-deep/90 text-amber-300 text-xs sm:text-sm font-semibold rounded-full mb-3 tracking-widest uppercase border border-amber-400/50 shadow-lg backdrop-blur-sm"
+              >
+                <i class="fa-solid fa-award text-amber-400"></i> Di sản văn hóa
+                Hồ Chí Minh
+              </span>
+              <h1
+                class="text-2xl sm:text-4xl md:text-5xl font-serif font-extrabold tracking-tight text-amber-50 drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)]"
+              >
+                Hành Trình Lịch Sử & Con Số Diệu Kỳ
+              </h1>
+              <p
+                class="text-xs sm:text-base text-amber-100/90 mt-3 max-w-2xl mx-auto font-light leading-relaxed drop-shadow"
+              >
+                Lắng nghe audio câu chuyện lịch sử hào hùng, khám phá con số ý
+                nghĩa và chinh phục những thử thách toán học bổ ích!
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= KHU VỰC AUDIO: LỜI NGỎ ĐẦU TRANG ================= -->
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 pt-8">
+          <div
+            class="bg-white rounded-3xl shadow-lux border-2 border-amber-200/90 overflow-hidden"
+          >
+            <!-- Header nhỏ Lời Ngỏ -->
+            <div
+              class="bg-gradient-to-r from-brand-deep via-brand-darkred to-brand-crimson px-6 py-3.5 flex items-center justify-between text-white border-b border-amber-400/30"
+            >
+              <div class="flex items-center gap-2.5">
+                <span
+                  class="w-7 h-7 rounded-full bg-amber-400/20 border border-amber-300/50 flex items-center justify-center text-amber-300 text-xs shadow-inner"
+                >
+                  <i class="fa-solid fa-bullhorn"></i>
+                </span>
+                <span
+                  class="text-xs sm:text-sm font-serif font-bold uppercase tracking-wider text-amber-200"
+                >
+                  Lời Ngỏ Đầu Trang – Chào Mừng Thầy Cô & Các Em Học Sinh
+                </span>
+              </div>
+              <span
+                class="text-[11px] font-sans text-amber-100/70 hidden sm:inline-block"
+              >
+                Thuyết minh giới thiệu
+              </span>
+            </div>
+
+            <!-- Khung Audio Player Lời Ngỏ -->
+            <div
+              class="p-5 sm:p-6 bg-gradient-to-r from-amber-50/90 via-rose-50/40 to-amber-50/90"
+            >
+              <!-- Audio thẻ ẩn cho Lời ngỏ -->
+              <audio id="intro-native-audio" preload="metadata"></audio>
+
+              <div
+                class="flex flex-col sm:flex-row items-center justify-between gap-4"
+              >
+                <!-- Nút bấm và thông tin Lời Ngỏ -->
+                <div class="flex items-center gap-4 w-full sm:w-auto">
+                  <button
+                    id="intro-audio-play-btn"
+                    onclick="toggleIntroAudioPlayback()"
+                    class="w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-gradient-to-tr from-brand-darkred to-brand-crimson hover:from-brand-crimson hover:to-amber-600 text-white flex items-center justify-center text-xl shadow-lg hover:scale-105 active:scale-95 transition-all shrink-0 border border-amber-300/50"
+                    aria-label="Phát audio lời ngỏ"
+                  >
+                    <i
+                      id="intro-audio-icon"
+                      class="fa-solid fa-play ml-0.5"
+                    ></i>
+                  </button>
+                  <div>
+                    <h4
+                      class="text-sm sm:text-base font-bold text-brand-deep flex items-center gap-2"
+                    >
+                      <span>LỜI NGỎ: KHÔNG GIAN VĂN HÓA HỒ CHÍ MINH</span>
+                      <span
+                        id="intro-audio-status-badge"
+                        class="text-[10px] px-2.5 py-0.5 rounded-full bg-stone-200 text-stone-700 font-semibold"
+                      >
+                        Sẵn sàng phát
+                      </span>
+                    </h4>
+                    <p
+                      id="intro-audio-source-info"
+                      class="text-xs text-slate-500 mt-0.5"
+                    >
+                      File:
+                      <span class="font-mono text-brand-crimson font-medium"
+                        >audio/loi-ngo.mp3</span
+                      >
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Sóng âm waveform & Thời lượng -->
+                <div class="flex items-center gap-3">
+                  <span
+                    id="intro-audio-time-display"
+                    class="text-xs font-mono text-slate-700 font-bold bg-white px-2.5 py-1 rounded-md border border-amber-200"
+                  >
+                    00:00
+                  </span>
+                  <div
+                    class="flex items-center gap-1.5 h-9 px-4 bg-white rounded-xl border border-amber-200/90 shadow-sm"
+                  >
+                    <span class="text-[11px] font-medium text-slate-600 mr-2">
+                      <i class="fa-solid fa-volume-high text-brand-crimson"></i>
+                      Audio:
+                    </span>
+                    <div
+                      class="w-1.5 h-3 bg-brand-crimson/40 rounded-full wave-bar intro-wave-bar"
+                      id="iwb-1"
+                    ></div>
+                    <div
+                      class="w-1.5 h-5 bg-brand-crimson rounded-full wave-bar intro-wave-bar"
+                      id="iwb-2"
+                    ></div>
+                    <div
+                      class="w-1.5 h-7 bg-amber-500 rounded-full wave-bar intro-wave-bar"
+                      id="iwb-3"
+                    ></div>
+                    <div
+                      class="w-1.5 h-4 bg-brand-crimson rounded-full wave-bar intro-wave-bar"
+                      id="iwb-4"
+                    ></div>
+                    <div
+                      class="w-1.5 h-2 bg-brand-crimson/40 rounded-full wave-bar intro-wave-bar"
+                      id="iwb-5"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Seekbar Lời Ngỏ -->
+              <div class="mt-4 flex items-center gap-2">
+                <input
+                  type="range"
+                  id="intro-audio-seek-bar"
+                  value="0"
+                  min="0"
+                  max="100"
+                  class="w-full h-1.5 bg-amber-200/70 rounded-lg appearance-none cursor-pointer accent-brand-crimson"
+                  oninput="onIntroAudioSeek(this.value)"
+                />
+              </div>
+
+              <!-- Nội dung tóm tắt Lời Ngỏ -->
+              <p
+                class="text-xs sm:text-sm text-slate-700 mt-3 pt-3 border-t border-amber-200/60 leading-relaxed font-serif italic text-stone-600"
+              >
+                "Chào mừng các bạn đến với Không Gian Văn Hóa Hồ Chí Minh. Nơi
+                đây kết nối những mốc son lịch sử chói lọi của Bác với vẻ đẹp
+                của các con số toán học kỳ thú, thắp sáng tình yêu quê hương đất
+                nước trong mỗi chúng ta."
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Danh mục 9 Thẻ Câu Chuyện -->
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
+          <div class="text-center mb-10">
+            <span
+              class="text-xs font-bold uppercase tracking-widest text-brand-crimson bg-red-100/80 px-3 py-1 rounded-full border border-red-200"
+            >
+              Bộ thẻ tương tác học tập
+            </span>
+            <h2
+              class="text-2xl sm:text-3xl font-serif font-bold text-brand-deep mt-3"
+            >
+              Khám Phá 9 Thẻ Câu Chuyện Về Bác
+            </h2>
+            <div
+              class="w-20 h-1 bg-gradient-to-r from-transparent via-brand-crimson to-transparent mx-auto my-3 rounded-full"
+            ></div>
+            <p class="text-xs sm:text-sm text-slate-600 max-w-lg mx-auto">
+              Nhấp vào từng thẻ để thưởng thức thuyết minh âm thanh, hình ảnh tư
+              liệu và thử thách đố vui toán học.
+            </p>
+          </div>
+
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
+          >
+            <!-- THẺ 1 -->
+            <div
+              class="lotus-card shadow-lux hover:shadow-luxHover rounded-2xl overflow-hidden cursor-pointer flex flex-col group"
+              onclick="navigateTo('card-1')"
+            >
+              <div class="relative aspect-[16/10] overflow-hidden bg-stone-900">
+                <img
+                  src="./src/img/hinh-the1.png"
+                  alt="Thẻ 1 - Quê hương Bác"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-108"
+                  onerror="this.src = './src/img/hinh-the1.png'"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-black/30"
+                ></div>
+                <div
+                  class="absolute inset-x-3 bottom-3 p-3 rounded-xl bg-black/40 backdrop-blur-sm border border-white/15 text-center"
+                >
+                  <span
+                    class="text-xl sm:text-2xl font-serif font-bold text-amber-300 drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] block"
+                    >Thẻ 1</span
+                  >
+                  <span
+                    class="text-xs text-white font-medium flex items-center justify-center gap-1.5 mt-0.5 tracking-wide drop-shadow"
+                  >
+                    <i
+                      class="fa-solid fa-book-open text-amber-300 text-[10px]"
+                    ></i>
+                    Quê hương Bác
+                  </span>
+                </div>
+              </div>
+              <div class="p-5 flex-1 flex flex-col justify-between bg-white">
+                <div>
+                  <h3
+                    class="text-base sm:text-lg font-serif font-bold text-brand-darkred group-hover:text-brand-crimson transition-colors"
+                  >
+                    Thẻ 1 – Quê hương Bác
+                  </h3>
+                  <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                    Khám phá nơi Bác Hồ chào đời năm 1890 và bài học sâu sắc về
+                    tình yêu quê hương, đất nước.
+                  </p>
+                </div>
+                <div
+                  class="mt-5 pt-3 border-t border-amber-100 flex items-center justify-between text-xs text-brand-gold font-semibold"
+                >
+                  <span class="flex items-center gap-1.5"
+                    ><i class="fa-solid fa-headphones text-brand-crimson"></i>
+                    Audio & Toán 1890</span
+                  >
+                  <span
+                    class="w-7 h-7 rounded-full bg-red-50 group-hover:bg-brand-crimson text-brand-crimson group-hover:text-white flex items-center justify-center transition-colors"
+                  >
+                    <i class="fa-solid fa-arrow-right text-[11px]"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- THẺ 2 -->
+            <div
+              class="lotus-card shadow-lux hover:shadow-luxHover rounded-2xl overflow-hidden cursor-pointer flex flex-col group"
+              onclick="navigateTo('card-2')"
+            >
+              <div class="relative aspect-[16/10] overflow-hidden bg-stone-900">
+                <img
+                  src="./src/img/hinh-the2.png"
+                  alt="Thẻ 2 - Ra đi tìm đường cứu nước"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-108"
+                  onerror="this.src = './src/img/hinh-the2.png'"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-black/30"
+                ></div>
+                <div
+                  class="absolute inset-x-3 bottom-3 p-3 rounded-xl bg-black/40 backdrop-blur-sm border border-white/15 text-center"
+                >
+                  <span
+                    class="text-xl sm:text-2xl font-serif font-bold text-amber-300 drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] block"
+                    >Thẻ 2</span
+                  >
+                  <span
+                    class="text-xs text-white font-medium flex items-center justify-center gap-1.5 mt-0.5 tracking-wide drop-shadow"
+                  >
+                    <i
+                      class="fa-solid fa-anchor text-amber-300 text-[10px]"
+                    ></i>
+                    Ra đi tìm đường cứu nước
+                  </span>
+                </div>
+              </div>
+              <div class="p-5 flex-1 flex flex-col justify-between bg-white">
+                <div>
+                  <h3
+                    class="text-base sm:text-lg font-serif font-bold text-brand-darkred group-hover:text-brand-crimson transition-colors"
+                  >
+                    Thẻ 2 – Ra Đi Tìm Đường Cứu Nước
+                  </h3>
+                  <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                    Khởi đầu hành trình vĩ đại từ Bến cảng Nhà Rồng năm 1911 với
+                    ý chí kiên định vì độc lập dân tộc.
+                  </p>
+                </div>
+                <div
+                  class="mt-5 pt-3 border-t border-amber-100 flex items-center justify-between text-xs text-brand-gold font-semibold"
+                >
+                  <span class="flex items-center gap-1.5"
+                    ><i class="fa-solid fa-headphones text-brand-crimson"></i>
+                    Audio & Toán 1911</span
+                  >
+                  <span
+                    class="w-7 h-7 rounded-full bg-red-50 group-hover:bg-brand-crimson text-brand-crimson group-hover:text-white flex items-center justify-center transition-colors"
+                  >
+                    <i class="fa-solid fa-arrow-right text-[11px]"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- THẺ 3 -->
+            <div
+              class="lotus-card shadow-lux hover:shadow-luxHover rounded-2xl overflow-hidden cursor-pointer flex flex-col group"
+              onclick="navigateTo('card-3')"
+            >
+              <div class="relative aspect-[16/10] overflow-hidden bg-stone-900">
+                <img
+                  src="./src/img/hinh-the3.png"
+                  alt="Thẻ 3 - Trở về Pác Bó"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-108"
+                  onerror="this.src = './src/img/hinh-the3.png'"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-black/30"
+                ></div>
+                <div
+                  class="absolute inset-x-3 bottom-3 p-3 rounded-xl bg-black/40 backdrop-blur-sm border border-white/15 text-center"
+                >
+                  <span
+                    class="text-xl sm:text-2xl font-serif font-bold text-amber-300 drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] block"
+                    >Thẻ 3</span
+                  >
+                  <span
+                    class="text-xs text-white font-medium flex items-center justify-center gap-1.5 mt-0.5 tracking-wide drop-shadow"
+                  >
+                    <i
+                      class="fa-solid fa-mountain text-amber-300 text-[10px]"
+                    ></i>
+                    Trở về Pác Bó
+                  </span>
+                </div>
+              </div>
+              <div class="p-5 flex-1 flex flex-col justify-between bg-white">
+                <div>
+                  <h3
+                    class="text-base sm:text-lg font-serif font-bold text-brand-darkred group-hover:text-brand-crimson transition-colors"
+                  >
+                    Thẻ 3 – Trở Về Pác Bó (1941)
+                  </h3>
+                  <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                    Dấu mốc Bác trở về Tổ quốc tại hang Pác Bó sau 30 năm bôn ba
+                    khắp năm châu bốn biển.
+                  </p>
+                </div>
+                <div
+                  class="mt-5 pt-3 border-t border-amber-100 flex items-center justify-between text-xs text-brand-gold font-semibold"
+                >
+                  <span class="flex items-center gap-1.5"
+                    ><i class="fa-solid fa-headphones text-brand-crimson"></i>
+                    Audio & Toán 1941</span
+                  >
+                  <span
+                    class="w-7 h-7 rounded-full bg-red-50 group-hover:bg-brand-crimson text-brand-crimson group-hover:text-white flex items-center justify-center transition-colors"
+                  >
+                    <i class="fa-solid fa-arrow-right text-[11px]"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- THẺ 4 -->
+            <div
+              class="lotus-card shadow-lux hover:shadow-luxHover rounded-2xl overflow-hidden cursor-pointer flex flex-col group"
+              onclick="navigateTo('card-4')"
+            >
+              <div class="relative aspect-[16/10] overflow-hidden bg-stone-900">
+                <img
+                  src="./src/img/hinh-the4.png"
+                  alt="Thẻ 4 - Ngày Độc lập"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-108"
+                  onerror="this.src = './src/img/hinh-the4.png'"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-black/30"
+                ></div>
+                <div
+                  class="absolute inset-x-3 bottom-3 p-3 rounded-xl bg-black/40 backdrop-blur-sm border border-white/15 text-center"
+                >
+                  <span
+                    class="text-xl sm:text-2xl font-serif font-bold text-amber-300 drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] block"
+                    >Thẻ 4</span
+                  >
+                  <span
+                    class="text-xs text-white font-medium flex items-center justify-center gap-1.5 mt-0.5 tracking-wide drop-shadow"
+                  >
+                    <i class="fa-solid fa-flag text-amber-300 text-[10px]"></i>
+                    Ngày Độc Lập
+                  </span>
+                </div>
+              </div>
+              <div class="p-5 flex-1 flex flex-col justify-between bg-white">
+                <div>
+                  <h3
+                    class="text-base sm:text-lg font-serif font-bold text-brand-darkred group-hover:text-brand-crimson transition-colors"
+                  >
+                    Thẻ 4 – Ngày Độc Lập (1945)
+                  </h3>
+                  <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                    Ngày 2/9/1945 tại Quảng trường Ba Đình – Khai sinh nước Việt
+                    Nam Dân chủ Cộng hòa.
+                  </p>
+                </div>
+                <div
+                  class="mt-5 pt-3 border-t border-amber-100 flex items-center justify-between text-xs text-brand-gold font-semibold"
+                >
+                  <span class="flex items-center gap-1.5"
+                    ><i class="fa-solid fa-headphones text-brand-crimson"></i>
+                    Audio & Toán 1945</span
+                  >
+                  <span
+                    class="w-7 h-7 rounded-full bg-red-50 group-hover:bg-brand-crimson text-brand-crimson group-hover:text-white flex items-center justify-center transition-colors"
+                  >
+                    <i class="fa-solid fa-arrow-right text-[11px]"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- THẺ 5 -->
+            <div
+              class="lotus-card shadow-lux hover:shadow-luxHover rounded-2xl overflow-hidden cursor-pointer flex flex-col group"
+              onclick="navigateTo('card-5')"
+            >
+              <div class="relative aspect-[16/10] overflow-hidden bg-stone-900">
+                <img
+                  src="./src/img/hinh-the5.png"
+                  alt="Thẻ 5 - 5 điều Bác dạy"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-108"
+                  onerror="this.src = './src/img/hinh-the5.png'"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-black/30"
+                ></div>
+                <div
+                  class="absolute inset-x-3 bottom-3 p-3 rounded-xl bg-black/40 backdrop-blur-sm border border-white/15 text-center"
+                >
+                  <span
+                    class="text-xl sm:text-2xl font-serif font-bold text-amber-300 drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] block"
+                    >Thẻ 5</span
+                  >
+                  <span
+                    class="text-xs text-white font-medium flex items-center justify-center gap-1.5 mt-0.5 tracking-wide drop-shadow"
+                  >
+                    <i class="fa-solid fa-star text-amber-300 text-[10px]"></i>
+                    5 Điều Bác Hồ Dạy
+                  </span>
+                </div>
+              </div>
+              <div class="p-5 flex-1 flex flex-col justify-between bg-white">
+                <div>
+                  <h3
+                    class="text-base sm:text-lg font-serif font-bold text-brand-darkred group-hover:text-brand-crimson transition-colors"
+                  >
+                    Thẻ 5 – 5 Điều Bác Hồ Dạy
+                  </h3>
+                  <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                    Lời dặn dò thiêng liêng dành cho thiếu niên, nhi đồng – Bài
+                    học quý giá về con số 5.
+                  </p>
+                </div>
+                <div
+                  class="mt-5 pt-3 border-t border-amber-100 flex items-center justify-between text-xs text-brand-gold font-semibold"
+                >
+                  <span class="flex items-center gap-1.5"
+                    ><i class="fa-solid fa-headphones text-brand-crimson"></i>
+                    Audio & Toán Con Số 5</span
+                  >
+                  <span
+                    class="w-7 h-7 rounded-full bg-red-50 group-hover:bg-brand-crimson text-brand-crimson group-hover:text-white flex items-center justify-center transition-colors"
+                  >
+                    <i class="fa-solid fa-arrow-right text-[11px]"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- THẺ 6 -->
+            <div
+              class="lotus-card shadow-lux hover:shadow-luxHover rounded-2xl overflow-hidden cursor-pointer flex flex-col group"
+              onclick="navigateTo('card-6')"
+            >
+              <div class="relative aspect-[16/10] overflow-hidden bg-stone-900">
+                <img
+                  src="./src/img/hinh-the6.png"
+                  alt="Thẻ 6 - 79 mùa xuân"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-108"
+                  onerror="this.src = './src/img/hinh-the6.png'"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-black/30"
+                ></div>
+                <div
+                  class="absolute inset-x-3 bottom-3 p-3 rounded-xl bg-black/40 backdrop-blur-sm border border-white/15 text-center"
+                >
+                  <span
+                    class="text-xl sm:text-2xl font-serif font-bold text-amber-300 drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] block"
+                    >Thẻ 6</span
+                  >
+                  <span
+                    class="text-xs text-white font-medium flex items-center justify-center gap-1.5 mt-0.5 tracking-wide drop-shadow"
+                  >
+                    <i class="fa-solid fa-spa text-amber-300 text-[10px]"></i>
+                    79 Mùa Xuân
+                  </span>
+                </div>
+              </div>
+              <div class="p-5 flex-1 flex flex-col justify-between bg-white">
+                <div>
+                  <h3
+                    class="text-base sm:text-lg font-serif font-bold text-brand-darkred group-hover:text-brand-crimson transition-colors"
+                  >
+                    Thẻ 6 – 79 Mùa Xuân
+                  </h3>
+                  <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                    Cuộc đời 79 năm cống hiến trọn vẹn cho độc lập tự do và ấm
+                    no, hạnh phúc của nhân dân.
+                  </p>
+                </div>
+                <div
+                  class="mt-5 pt-3 border-t border-amber-100 flex items-center justify-between text-xs text-brand-gold font-semibold"
+                >
+                  <span class="flex items-center gap-1.5"
+                    ><i class="fa-solid fa-headphones text-brand-crimson"></i>
+                    Audio & Toán Con Số 79</span
+                  >
+                  <span
+                    class="w-7 h-7 rounded-full bg-red-50 group-hover:bg-brand-crimson text-brand-crimson group-hover:text-white flex items-center justify-center transition-colors"
+                  >
+                    <i class="fa-solid fa-arrow-right text-[11px]"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- THẺ 7 -->
+            <div
+              class="lotus-card shadow-lux hover:shadow-luxHover rounded-2xl overflow-hidden cursor-pointer flex flex-col group"
+              onclick="navigateTo('card-7')"
+            >
+              <div class="relative aspect-[16/10] overflow-hidden bg-stone-900">
+                <img
+                  src="./src/img/hinh-the7.png"
+                  alt="Thẻ 7 - Trồng người"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-108"
+                  onerror="this.src = './src/img/hinh-the7.png'"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-black/30"
+                ></div>
+                <div
+                  class="absolute inset-x-3 bottom-3 p-3 rounded-xl bg-black/40 backdrop-blur-sm border border-white/15 text-center"
+                >
+                  <span
+                    class="text-xl sm:text-2xl font-serif font-bold text-amber-300 drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] block"
+                    >Thẻ 7</span
+                  >
+                  <span
+                    class="text-xs text-white font-medium flex items-center justify-center gap-1.5 mt-0.5 tracking-wide drop-shadow"
+                  >
+                    <i
+                      class="fa-solid fa-seedling text-amber-300 text-[10px]"
+                    ></i>
+                    Trồng Người
+                  </span>
+                </div>
+              </div>
+              <div class="p-5 flex-1 flex flex-col justify-between bg-white">
+                <div>
+                  <h3
+                    class="text-base sm:text-lg font-serif font-bold text-brand-darkred group-hover:text-brand-crimson transition-colors"
+                  >
+                    Thẻ 7 – Trồng Người Trăm Năm
+                  </h3>
+                  <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                    Tầm nhìn vĩ đại về giáo dục và đào tạo con người tương lai
+                    qua hai con số 10 và 100.
+                  </p>
+                </div>
+                <div
+                  class="mt-5 pt-3 border-t border-amber-100 flex items-center justify-between text-xs text-brand-gold font-semibold"
+                >
+                  <span class="flex items-center gap-1.5"
+                    ><i class="fa-solid fa-headphones text-brand-crimson"></i>
+                    Audio & Toán Số 10, 100</span
+                  >
+                  <span
+                    class="w-7 h-7 rounded-full bg-red-50 group-hover:bg-brand-crimson text-brand-crimson group-hover:text-white flex items-center justify-center transition-colors"
+                  >
+                    <i class="fa-solid fa-arrow-right text-[11px]"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- THẺ 8 -->
+            <div
+              class="lotus-card shadow-lux hover:shadow-luxHover rounded-2xl overflow-hidden cursor-pointer flex flex-col group"
+              onclick="navigateTo('card-8')"
+            >
+              <div class="relative aspect-[16/10] overflow-hidden bg-stone-900">
+                <img
+                  src="./src/img/hinh-the8.png"
+                  alt="Thẻ 8 - Năm 1969"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-108"
+                  onerror="this.src = './src/img/hinh-the8.png'"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-black/30"
+                ></div>
+                <div
+                  class="absolute inset-x-3 bottom-3 p-3 rounded-xl bg-black/40 backdrop-blur-sm border border-white/15 text-center"
+                >
+                  <span
+                    class="text-xl sm:text-2xl font-serif font-bold text-amber-300 drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] block"
+                    >Thẻ 8</span
+                  >
+                  <span
+                    class="text-xs text-white font-medium flex items-center justify-center gap-1.5 mt-0.5 tracking-wide drop-shadow"
+                  >
+                    <i
+                      class="fa-solid fa-scroll text-amber-300 text-[10px]"
+                    ></i>
+                    Năm 1969
+                  </span>
+                </div>
+              </div>
+              <div class="p-5 flex-1 flex flex-col justify-between bg-white">
+                <div>
+                  <h3
+                    class="text-base sm:text-lg font-serif font-bold text-brand-darkred group-hover:text-brand-crimson transition-colors"
+                  >
+                    Thẻ 8 – Năm 1969 & Di Chúc
+                  </h3>
+                  <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                    Lời dặn dò thiêng liêng muôn vàn tình thương yêu gửi lại cho
+                    toàn Đảng, toàn quân và toàn dân.
+                  </p>
+                </div>
+                <div
+                  class="mt-5 pt-3 border-t border-amber-100 flex items-center justify-between text-xs text-brand-gold font-semibold"
+                >
+                  <span class="flex items-center gap-1.5"
+                    ><i class="fa-solid fa-headphones text-brand-crimson"></i>
+                    Audio & Toán 1969</span
+                  >
+                  <span
+                    class="w-7 h-7 rounded-full bg-red-50 group-hover:bg-brand-crimson text-brand-crimson group-hover:text-white flex items-center justify-center transition-colors"
+                  >
+                    <i class="fa-solid fa-arrow-right text-[11px]"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- THẺ 9 -->
+            <div
+              class="lotus-card shadow-lux hover:shadow-luxHover rounded-2xl overflow-hidden cursor-pointer flex flex-col group"
+              onclick="navigateTo('card-9')"
+            >
+              <div class="relative aspect-[16/10] overflow-hidden bg-stone-900">
+                <img
+                  src="./src/img/hinh-the9.png"
+                  alt="Thẻ 9 - Chặng đường 1945-1975"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-108"
+                  onerror="
+                    this.src =
+                      'https://placehold.co/600x375/B91C1C/ffffff?text=The+9+-+1945+1975'
+                  "
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-black/30"
+                ></div>
+                <div
+                  class="absolute inset-x-3 bottom-3 p-3 rounded-xl bg-black/40 backdrop-blur-sm border border-white/15 text-center"
+                >
+                  <span
+                    class="text-xl sm:text-2xl font-serif font-bold text-amber-300 drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] block"
+                    >Thẻ 9</span
+                  >
+                  <span
+                    class="text-xs text-white font-medium flex items-center justify-center gap-1.5 mt-0.5 tracking-wide drop-shadow"
+                  >
+                    <i class="fa-solid fa-award text-amber-300 text-[10px]"></i>
+                    Chặng Đường 1945–1969
+                  </span>
+                </div>
+              </div>
+              <div class="p-5 flex-1 flex flex-col justify-between bg-white">
+                <div>
+                  <h3
+                    class="text-base sm:text-lg font-serif font-bold text-brand-darkred group-hover:text-brand-crimson transition-colors"
+                  >
+                    Thẻ 9 – 24 Năm Lãnh Đạo
+                  </h3>
+                  <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                    Chặng đường 1945 đến 1969 – 24 năm Bác Hồ chèo lái con
+                    thuyền cách mạng Việt Nam.
+                  </p>
+                </div>
+                <div
+                  class="mt-5 pt-3 border-t border-amber-100 flex items-center justify-between text-xs text-brand-gold font-semibold"
+                >
+                  <span class="flex items-center gap-1.5"
+                    ><i class="fa-solid fa-headphones text-brand-crimson"></i>
+                    Audio & Toán Con Số 24</span
+                  >
+                  <span
+                    class="w-7 h-7 rounded-full bg-red-50 group-hover:bg-brand-crimson text-brand-crimson group-hover:text-white flex items-center justify-center transition-colors"
+                  >
+                    <i class="fa-solid fa-arrow-right text-[11px]"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Thẻ 10: LỜI KẾT & GIỚI THIỆU TỔ TOÁN -->
+            <div
+              class="lotus-card shadow-lux hover:shadow-luxHover rounded-2xl overflow-hidden cursor-pointer flex flex-col group border-2 border-amber-400/50 bg-gradient-to-b from-white to-amber-50/40 col-span-1 sm:col-span-2 lg:col-span-3 mt-2"
+              onclick="navigateTo('conclusion')"
+            >
+              <div class="grid grid-cols-1 md:grid-cols-12 items-stretch">
+                <div
+                  class="md:col-span-5 relative aspect-[16/10] md:aspect-auto overflow-hidden bg-brand-deep min-h-[220px]"
+                >
+                  <img
+                    src="./src/img/hinh-loiket.jpg"
+                    alt="Thẻ Lời Kết - Tổ Toán Nguyễn Hiền"
+                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-108"
+                    onerror="
+                      this.src =
+                        'https://placehold.co/600x375/5A0E0E/ffffff?text=Loi+Ket+-+To+Toan+Nguyen+Hien'
+                    "
+                  />
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-black/20"
+                  ></div>
+                  <div
+                    class="absolute inset-x-4 bottom-4 p-3 rounded-xl bg-black/50 backdrop-blur-sm border border-amber-300/40 text-center"
+                  >
+                    <span
+                      class="text-xl sm:text-2xl font-serif font-bold text-amber-300 drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] block"
+                    >
+                      LỜI KẾT
+                    </span>
+                    <span
+                      class="text-xs text-white font-medium flex items-center justify-center gap-1.5 mt-0.5 tracking-wide drop-shadow"
+                    >
+                      <i
+                        class="fa-solid fa-feather-pointed text-amber-300 text-[10px]"
+                      ></i>
+                      Tổ Toán – Nguyễn Hiền
+                    </span>
+                  </div>
+                </div>
+                <div
+                  class="md:col-span-7 p-6 sm:p-7 flex flex-col justify-between bg-white"
+                >
+                  <div>
+                    <div class="flex items-center gap-2 mb-2">
+                      <span
+                        class="text-[10px] bg-amber-100 text-amber-900 px-2.5 py-0.5 rounded-full font-bold border border-amber-300 uppercase tracking-wider"
+                      >
+                        Phần Đặc Biệt
+                      </span>
+                      <span
+                        class="text-xs text-brand-crimson font-serif font-bold"
+                      >
+                        Hành Trình Bất Tận
+                      </span>
+                    </div>
+                    <h3
+                      class="text-lg sm:text-xl font-serif font-bold text-brand-darkred group-hover:text-brand-crimson transition-colors"
+                    >
+                      Lời Kết: Tình Yêu Di Sản Bác Hồ &amp; Niềm Say Mê Toán Học
+                    </h3>
+                    <p
+                      class="text-xs sm:text-sm text-slate-600 mt-2.5 leading-relaxed"
+                    >
+                      Lắng nghe thuyết minh âm thanh lời kết đầy cảm xúc, chiêm
+                      ngưỡng hình ảnh tư liệu tổng kết hành trình và phần
+                      <strong
+                        >giới thiệu các Thầy Cô giáo trong Tổ Toán – Trường
+                        Nguyễn Hiền</strong
+                      >
+                      – những người đã thắp sáng ngọn lửa sáng tạo và tri thức
+                      cho công trình này.
+                    </p>
+                  </div>
+                  <div
+                    class="mt-6 pt-4 border-t border-amber-100 flex items-center justify-between text-xs text-brand-gold font-semibold"
+                  >
+                    <span
+                      class="flex items-center gap-2 text-brand-crimson font-bold text-sm"
+                    >
+                      <i class="fa-solid fa-headphones text-base"></i>
+                      Nghe Audio Lời Kết &amp; Giới Thiệu Tổ Toán
+                    </span>
+                    <span
+                      class="w-8 h-8 rounded-full bg-brand-crimson/10 group-hover:bg-brand-crimson text-brand-crimson group-hover:text-white flex items-center justify-center transition-all shadow-xs"
+                    >
+                      <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= SECTION: CHI TIẾT THẺ ================= -->
+      <section id="card-detail-view" class="hidden min-h-[75vh] py-8 sm:py-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+          <!-- Thanh điều hướng đầu trang -->
+          <div
+            class="flex flex-wrap items-center justify-between gap-2.5 mb-6 pb-4 border-b border-amber-900/10"
+          >
+            <button
+              onclick="navigateTo('home')"
+              class="inline-flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-semibold text-brand-crimson hover:text-brand-darkred px-3 py-2 sm:px-4 sm:py-2.5 rounded-xl bg-white border border-amber-200 shadow-sm transition-all hover:bg-amber-50 hover:shadow"
+            >
+              <i class="fa-solid fa-house"></i> Về Trang Chủ
+            </button>
+
+            <div class="flex items-center gap-1.5 sm:gap-2">
+              <button
+                id="btn-prev-card"
+                class="px-2.5 sm:px-3.5 py-2 text-xs font-medium rounded-xl bg-white border border-amber-200 hover:bg-amber-50 text-slate-700 shadow-sm transition-all"
+              >
+                <i class="fa-solid fa-chevron-left mr-1"></i> Thẻ trước
+              </button>
+              <span
+                id="current-badge-indicator"
+                class="text-xs font-bold text-brand-darkred px-2.5 sm:px-3 py-1.5 bg-amber-100/80 rounded-xl border border-amber-300"
+              >
+                Thẻ 1 / 9
+              </span>
+              <button
+                id="btn-next-card"
+                class="px-2.5 sm:px-3.5 py-2 text-xs font-medium rounded-xl bg-white border border-amber-200 hover:bg-amber-50 text-slate-700 shadow-sm transition-all"
+              >
+                Thẻ sau <i class="fa-solid fa-chevron-right ml-1"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Khung nội dung chính của thẻ -->
+          <div
+            class="bg-white rounded-3xl shadow-lux border border-amber-200/80 overflow-hidden"
+          >
+            <!-- Header Thẻ Hoàng gia -->
+            <div
+              class="relative bg-gradient-to-r from-brand-deep via-brand-darkred to-brand-crimson text-white p-6 sm:p-9 border-b border-amber-400/30"
+            >
+              <div class="flex flex-wrap items-center justify-between gap-4">
+                <div class="max-w-xl">
+                  <span
+                    id="story-tag"
+                    class="inline-block text-[11px] font-bold uppercase tracking-widest px-3.5 py-1 rounded-full bg-black/35 text-amber-300 border border-amber-300/40 mb-2 backdrop-blur-sm"
+                  >
+                    Thẻ 1 – Lịch sử
+                  </span>
+                  <h1
+                    id="story-title"
+                    class="text-2xl sm:text-3xl font-serif font-extrabold text-amber-50 tracking-tight drop-shadow-md"
+                  >
+                    Quê Hương Làng Sen Năm 1890
+                  </h1>
+                  <p
+                    id="story-subtitle"
+                    class="text-xs sm:text-sm text-amber-100/90 mt-1 font-light drop-shadow"
+                  >
+                    Nơi chắp cánh tâm hồn yêu nước của Người
+                  </p>
+                </div>
+
+                <!-- Huy hiệu con số lịch sử -->
+                <div
+                  class="bg-black/30 backdrop-blur-md border-2 border-amber-300/60 rounded-2xl p-4 text-center min-w-[125px] shadow-lg"
+                >
+                  <span
+                    id="story-number-badge-label"
+                    class="text-[10px] uppercase font-bold text-amber-200 tracking-wider block"
+                  >
+                    Con số lịch sử
+                  </span>
+                  <span
+                    id="story-number-badge"
+                    class="text-3xl sm:text-4xl font-black text-amber-300 font-serif block tracking-wider drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
+                  >
+                    1890
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- AUDIO PLAYER CỦA THẺ -->
+            <div class="p-5 sm:p-7 bg-amber-50/80 border-b border-amber-200/80">
+              <audio id="story-native-audio" preload="metadata"></audio>
+
+              <div
+                class="flex flex-col sm:flex-row items-center justify-between gap-4"
+              >
+                <div class="flex items-center gap-4 w-full sm:w-auto">
+                  <button
+                    id="audio-play-btn"
+                    onclick="toggleAudioPlayback()"
+                    class="w-14 h-14 rounded-full bg-gradient-to-tr from-brand-darkred to-brand-crimson hover:from-brand-crimson hover:to-amber-600 text-white flex items-center justify-center text-xl shadow-lg hover:scale-105 active:scale-95 transition-all shrink-0 border border-amber-300/40"
+                    aria-label="Phát audio thẻ"
+                  >
+                    <i id="audio-icon" class="fa-solid fa-play ml-0.5"></i>
+                  </button>
+                  <div>
+                    <h4
+                      class="text-sm font-bold text-brand-deep flex items-center gap-2"
+                    >
+                      <span>Trình Phát Thuyết Minh</span>
+                      <span
+                        id="audio-status-badge"
+                        class="text-[10px] px-2.5 py-0.5 rounded-full bg-stone-200 text-stone-700 font-semibold"
+                      >
+                        Sẵn sàng phát
+                      </span>
+                    </h4>
+                    <p
+                      id="audio-source-info"
+                      class="text-xs text-slate-500 mt-0.5"
+                    >
+                      File:
+                      <span class="font-mono text-brand-crimson font-medium"
+                        >audio/the-1.mp3</span
+                      >
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex items-center gap-3">
+                  <span
+                    id="audio-time-display"
+                    class="text-xs font-mono text-slate-700 font-bold bg-white px-2.5 py-1 rounded-md border border-amber-200"
+                  >
+                    00:00
+                  </span>
+                  <div
+                    class="flex items-center gap-1.5 h-9 px-4 bg-white rounded-xl border border-amber-200/90 shadow-sm"
+                  >
+                    <span class="text-[11px] font-medium text-slate-600 mr-2">
+                      <i class="fa-solid fa-volume-high text-brand-crimson"></i>
+                      Audio:
+                    </span>
+                    <div
+                      class="w-1.5 h-3 bg-brand-crimson/40 rounded-full wave-bar"
+                      id="wb-1"
+                    ></div>
+                    <div
+                      class="w-1.5 h-5 bg-brand-crimson rounded-full wave-bar"
+                      id="wb-2"
+                    ></div>
+                    <div
+                      class="w-1.5 h-7 bg-amber-500 rounded-full wave-bar"
+                      id="wb-3"
+                    ></div>
+                    <div
+                      class="w-1.5 h-4 bg-brand-crimson rounded-full wave-bar"
+                      id="wb-4"
+                    ></div>
+                    <div
+                      class="w-1.5 h-2 bg-brand-crimson/40 rounded-full wave-bar"
+                      id="wb-5"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-4 flex items-center gap-2">
+                <input
+                  type="range"
+                  id="audio-seek-bar"
+                  value="0"
+                  min="0"
+                  max="100"
+                  class="w-full h-1.5 bg-amber-200/70 rounded-lg appearance-none cursor-pointer accent-brand-crimson"
+                  oninput="onAudioSeek(this.value)"
+                />
+              </div>
+            </div>
+
+            <!-- NỘI DUNG CHI TIẾT -->
+            <div class="p-6 sm:p-9 space-y-7">
+              <div
+                id="story-image-wrapper"
+                class="relative rounded-2xl overflow-hidden shadow-md border-2 border-amber-100 bg-stone-900"
+              >
+                <img
+                  id="story-main-image"
+                  src=""
+                  alt="Hình ảnh tư liệu"
+                  class="w-full h-72 sm:h-96 object-cover transition-transform duration-700 hover:scale-[1.02]"
+                  onerror="
+                    this.src =
+                      'https://placehold.co/1200x600/5A0E0E/ffffff?text=Loi+Ket+-+To+Toan+Nguyen+Hien'
+                  "
+                />
+                <div
+                  id="story-image-caption"
+                  class="p-3 text-center text-xs text-stone-700 bg-amber-50/95 border-t border-amber-200/60 italic font-medium"
+                >
+                  Hình ảnh tư liệu lịch sử
+                </div>
+              </div>
+
+              <div
+                class="prose max-w-none text-slate-800 leading-relaxed text-sm sm:text-base space-y-4"
+                id="story-content-body"
+              ></div>
+
+              <div
+                id="story-video-container"
+                class="rounded-2xl border-2 border-amber-200 overflow-hidden bg-stone-900 shadow-md"
+              >
+                <div
+                  class="p-3 bg-stone-800 text-amber-300 text-xs font-semibold flex items-center gap-2"
+                >
+                  <i class="fa-solid fa-circle-play text-red-500"></i> Video Tư
+                  Liệu Lịch Sử Liên Quan
+                </div>
+                <div
+                  id="story-video-player-box"
+                  class="relative aspect-video w-full flex items-center justify-center bg-black"
+                ></div>
+              </div>
+
+              <!-- PHẦN Ý NGHĨA CON SỐ (ẨN KHI Ở THẺ LỜI KẾT) -->
+              <div
+                id="card-number-meaning-section"
+                class="p-6 rounded-2xl bg-gradient-to-r from-amber-50 via-rose-50/40 to-amber-50 border border-amber-200/90 text-slate-800 shadow-sm"
+              >
+                <div class="flex items-start gap-3.5">
+                  <div
+                    class="w-9 h-9 rounded-xl bg-amber-500 text-white flex items-center justify-center shrink-0 text-base shadow-sm mt-0.5"
+                  >
+                    <i class="fa-solid fa-lightbulb"></i>
+                  </div>
+                  <div>
+                    <h4
+                      class="font-serif font-bold text-brand-darkred text-base sm:text-lg mb-1.5"
+                    >
+                      Ý nghĩa của con số
+                      <span
+                        id="number-meaning-val"
+                        class="text-brand-crimson font-black underline underline-offset-4 decoration-amber-400"
+                        >1890</span
+                      >
+                    </h4>
+                    <p
+                      id="number-meaning-desc"
+                      class="text-xs sm:text-sm text-slate-700 leading-relaxed font-normal"
+                    ></p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- KHU VỰC THỬ THÁCH TOÁN HỌC (ẨN KHI Ở THẺ LỜI KẾT) -->
+              <div
+                id="card-math-challenge-section"
+                class="mt-8 pt-8 border-t border-stone-200"
+              >
+                <div class="flex items-center gap-3 mb-6">
+                  <div
+                    class="w-9 h-9 rounded-xl bg-brand-crimson text-white flex items-center justify-center text-sm font-bold shadow-md"
+                  >
+                    <i class="fa-solid fa-calculator"></i>
+                  </div>
+                  <div>
+                    <h3
+                      class="text-lg sm:text-xl font-serif font-bold text-brand-deep"
+                    >
+                      Thử Thách Toán Học Gắn Liền Với Con Số
+                    </h3>
+                    <p class="text-xs text-slate-500">
+                      Vận dụng tư duy số học để giải các câu đố lý thú gắn với
+                      từng mốc lịch sử!
+                    </p>
+                  </div>
+                </div>
+
+                <div id="math-challenges-container" class="space-y-6"></div>
+
+                <div
+                  id="math-score-board"
+                  class="hidden mt-6 p-4 rounded-xl bg-emerald-50 border border-emerald-300 text-emerald-900 flex items-center justify-between shadow-sm"
+                >
+                  <div
+                    class="flex items-center gap-2 text-xs sm:text-sm font-semibold"
+                  >
+                    <i
+                      class="fa-solid fa-circle-check text-emerald-600 text-xl"
+                    ></i>
+                    <span
+                      >Tuyệt vời! Bạn đã hoàn thành toàn bộ câu hỏi thử
+                      thách!</span
+                    >
+                  </div>
+                  <button
+                    onclick="resetMathChallenges()"
+                    class="text-xs font-bold text-emerald-800 hover:text-emerald-950 px-3 py-1.5 rounded-lg bg-emerald-100 hover:bg-emerald-200 transition-colors"
+                  >
+                    <i class="fa-solid fa-rotate-right mr-1"></i> Thử lại
+                  </button>
+                </div>
+              </div>
+
+              <!-- KHU VỰC GIỚI THIỆU TỔ TOÁN - NGUYỄN HIỀN (CHỈ HIỂN THỊ TRONG THẺ LỜI KẾT) -->
+              <div
+                id="conclusion-team-section"
+                class="hidden mt-8 pt-6 space-y-8 border-t-2 border-amber-300/60"
+              >
+                <!-- Banner tôn vinh & sứ mệnh giáo dục -->
+                <div
+                  class="p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-brand-deep via-brand-darkred to-stone-900 text-white shadow-xl border border-amber-400/40 relative overflow-hidden"
+                >
+                  <div
+                    class="absolute -right-12 -bottom-12 w-48 h-48 rounded-full bg-amber-400/10 blur-2xl pointer-events-none"
+                  ></div>
+                  <div
+                    class="absolute left-6 top-6 text-amber-300/10 text-8xl font-serif pointer-events-none select-none"
+                  >
+                    <i class="fa-solid fa-square-root-variable"></i>
+                  </div>
+                  <div class="relative z-10">
+                    <div
+                      class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/20 text-amber-300 text-[11px] font-bold border border-amber-300/40 mb-3 uppercase tracking-wider backdrop-blur-sm"
+                    >
+                      <i class="fa-solid fa-medal text-xs"></i> Đơn Vị Thực Hiện
+                      &amp; Biên Soạn
+                    </div>
+                    <h3
+                      class="text-2xl sm:text-3xl font-serif font-extrabold text-amber-200 tracking-tight leading-snug"
+                    >
+                      TỔ TOÁN – TRƯỜNG THCS NGUYỄN HIỀN
+                    </h3>
+                    <p
+                      class="text-xs sm:text-sm text-amber-100/90 mt-2 font-light leading-relaxed max-w-3xl"
+                    >
+                      Công trình
+                      <strong>"Không Gian Văn Hóa Hồ Chí Minh"</strong> là dự án
+                      giáo dục tích hợp liên môn Lịch sử – Toán học, do tập thể
+                      quý Thầy Cô giáo Tổ Toán – Trường THCS Nguyễn Hiền khởi
+                      xướng, thiết kế và phát triển với tâm huyết sâu sắc nhằm
+                      lan tỏa di sản đạo đức Bác Hồ và khơi dậy niềm say mê tư
+                      duy logic trong thế hệ trẻ.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Lưới giới thiệu thành viên Tổ Toán -->
+                <div>
+                  <div class="flex items-center gap-2.5 mb-5">
+                    <div
+                      class="w-8 h-8 rounded-xl bg-amber-500/15 text-amber-800 flex items-center justify-center font-bold text-sm"
+                    >
+                      <i class="fa-solid fa-users"></i>
+                    </div>
+                    <div>
+                      <h4
+                        class="text-base sm:text-lg font-serif font-bold text-brand-darkred"
+                      >
+                        Đội Ngũ Thầy Cô Giáo Tổ Toán – THCS NGUYỄN HIỀN
+                      </h4>
+                      <p class="text-xs text-slate-500">
+                        Những người thầy, người cô tận tụy thắp sáng tri thức và
+                        tình yêu quê hương đất nước
+                      </p>
+                    </div>
+                  </div>
+
+                  <div
+                    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
+                  >
+                    <!-- Thẻ Tổ Trưởng -->
+                    <div
+                      class="p-5 rounded-2xl bg-gradient-to-b from-amber-50/80 to-white border-2 border-amber-300/80 shadow-sm hover:shadow-md transition-all flex flex-col justify-between"
+                    >
+                      <div>
+                        <div class="flex items-center justify-between mb-3">
+                          <span
+                            class="text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full bg-brand-crimson text-white"
+                          >
+                            Tổ Trưởng Chuyên Môn
+                          </span>
+                          <span class="text-amber-500 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                          </span>
+                        </div>
+                        <div class="flex items-center gap-3 mb-2.5">
+                          <div
+                            class="w-11 h-11 rounded-full bg-gradient-to-tr from-brand-darkred to-brand-crimson text-amber-200 flex items-center justify-center text-lg font-serif font-bold shadow-sm shrink-0"
+                          >
+                            TT
+                          </div>
+                          <div>
+                            <h5 class="text-sm font-bold text-brand-deep">
+                              Thầy / Cô Tổ Trưởng
+                            </h5>
+                            <span
+                              class="text-[11px] text-brand-crimson font-medium"
+                              >Tổ Toán – THCS Nguyễn Hiền</span
+                            >
+                          </div>
+                        </div>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                          Chỉ đạo nội dung tổng thể, định hướng sư phạm giáo dục
+                          lịch sử tích hợp Toán học THCS và thẩm định học liệu
+                          cho toàn bộ dự án.
+                        </p>
+                      </div>
+                      <div
+                        class="mt-4 pt-3 border-t border-amber-100 flex items-center gap-1.5 text-[11px] text-amber-900 font-medium"
+                      >
+                        <i
+                          class="fa-solid fa-compass-drafting text-amber-600"
+                        ></i>
+                        Định hướng &amp; Chỉ đạo
+                      </div>
+                    </div>
+
+                    <!-- Thẻ Tổ Phó -->
+                    <div
+                      class="p-5 rounded-2xl bg-gradient-to-b from-amber-50/80 to-white border-2 border-amber-300/80 shadow-sm hover:shadow-md transition-all flex flex-col justify-between"
+                    >
+                      <div>
+                        <div class="flex items-center justify-between mb-3">
+                          <span
+                            class="text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full bg-amber-600 text-white"
+                          >
+                            Tổ Phó Chuyên Môn
+                          </span>
+                          <span class="text-amber-500 text-sm">
+                            <i class="fa-solid fa-award"></i>
+                          </span>
+                        </div>
+                        <div class="flex items-center gap-3 mb-2.5">
+                          <div
+                            class="w-11 h-11 rounded-full bg-gradient-to-tr from-amber-600 to-amber-500 text-white flex items-center justify-center text-lg font-serif font-bold shadow-sm shrink-0"
+                          >
+                            TP
+                          </div>
+                          <div>
+                            <h5 class="text-sm font-bold text-brand-deep">
+                              Thầy / Cô Tổ Phó
+                            </h5>
+                            <span
+                              class="text-[11px] text-brand-crimson font-medium"
+                              >Tổ Toán – THCS Nguyễn Hiền</span
+                            >
+                          </div>
+                        </div>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                          Chủ trì biên tập hệ thống tư liệu lịch sử qua 9 con số
+                          trọng điểm, thiết kế cấu trúc đa phương tiện và điều
+                          phối chuyên đề Toán THCS.
+                        </p>
+                      </div>
+                      <div
+                        class="mt-4 pt-3 border-t border-amber-100 flex items-center gap-1.5 text-[11px] text-amber-900 font-medium"
+                      >
+                        <i class="fa-solid fa-book-bookmark text-amber-600"></i>
+                        Biên soạn &amp; Điều phối
+                      </div>
+                    </div>
+
+                    <!-- Thẻ Nhóm Giáo Viên Khối 9 -->
+                    <div
+                      class="p-5 rounded-2xl bg-white border border-amber-200/90 shadow-sm hover:shadow-md transition-all flex flex-col justify-between"
+                    >
+                      <div>
+                        <div class="flex items-center justify-between mb-3">
+                          <span
+                            class="text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full bg-stone-100 text-stone-700 border border-stone-200"
+                          >
+                            Nhóm Toán Khối 9
+                          </span>
+                          <span class="text-stone-400 text-xs">
+                            <i class="fa-solid fa-calculator"></i>
+                          </span>
+                        </div>
+                        <div class="flex items-center gap-3 mb-2.5">
+                          <div
+                            class="w-11 h-11 rounded-full bg-amber-100 text-brand-crimson flex items-center justify-center text-base font-bold shrink-0"
+                          >
+                            K9
+                          </div>
+                          <div>
+                            <h5 class="text-sm font-bold text-brand-deep">
+                              Quý Thầy Cô Nhóm Toán 9
+                            </h5>
+                            <span class="text-[11px] text-slate-500"
+                              >Giáo viên phụ trách</span
+                            >
+                          </div>
+                        </div>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                          Xây dựng hệ thống câu hỏi tư duy căn thức, hàm số,
+                          phương trình và bài toán thực tế gắn liền với các cột
+                          mốc lịch sử độc lập dân tộc.
+                        </p>
+                      </div>
+                      <div
+                        class="mt-4 pt-3 border-t border-stone-100 flex items-center gap-1.5 text-[11px] text-slate-600"
+                      >
+                        <i
+                          class="fa-solid fa-check-circle text-emerald-600"
+                        ></i>
+                        Toán học thực tế &amp; Khảo sát
+                      </div>
+                    </div>
+
+                    <!-- Thẻ Nhóm Giáo Viên Khối 8 -->
+                    <div
+                      class="p-5 rounded-2xl bg-white border border-amber-200/90 shadow-sm hover:shadow-md transition-all flex flex-col justify-between"
+                    >
+                      <div>
+                        <div class="flex items-center justify-between mb-3">
+                          <span
+                            class="text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full bg-stone-100 text-stone-700 border border-stone-200"
+                          >
+                            Nhóm Toán Khối 8
+                          </span>
+                          <span class="text-stone-400 text-xs">
+                            <i class="fa-solid fa-chart-line"></i>
+                          </span>
+                        </div>
+                        <div class="flex items-center gap-3 mb-2.5">
+                          <div
+                            class="w-11 h-11 rounded-full bg-amber-100 text-brand-crimson flex items-center justify-center text-base font-bold shrink-0"
+                          >
+                            K8
+                          </div>
+                          <div>
+                            <h5 class="text-sm font-bold text-brand-deep">
+                              Quý Thầy Cô Nhóm Toán 8
+                            </h5>
+                            <span class="text-[11px] text-slate-500"
+                              >Giáo viên phụ trách</span
+                            >
+                          </div>
+                        </div>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                          Biên tập các thử thách đa thức, phân thức, hình học
+                          trực quan và bài toán logic phản ánh từng chặng đường
+                          kháng chiến vẻ vang của Bác.
+                        </p>
+                      </div>
+                      <div
+                        class="mt-4 pt-3 border-t border-stone-100 flex items-center gap-1.5 text-[11px] text-slate-600"
+                      >
+                        <i
+                          class="fa-solid fa-check-circle text-emerald-600"
+                        ></i>
+                        Đa thức &amp; Hình học trực quan
+                      </div>
+                    </div>
+
+                    <!-- Thẻ Nhóm Giáo Viên Khối 7 -->
+                    <div
+                      class="p-5 rounded-2xl bg-white border border-amber-200/90 shadow-sm hover:shadow-md transition-all flex flex-col justify-between"
+                    >
+                      <div>
+                        <div class="flex items-center justify-between mb-3">
+                          <span
+                            class="text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full bg-stone-100 text-stone-700 border border-stone-200"
+                          >
+                            Nhóm Toán Khối 7
+                          </span>
+                          <span class="text-stone-400 text-xs">
+                            <i class="fa-solid fa-shapes"></i>
+                          </span>
+                        </div>
+                        <div class="flex items-center gap-3 mb-2.5">
+                          <div
+                            class="w-11 h-11 rounded-full bg-amber-100 text-brand-crimson flex items-center justify-center text-base font-bold shrink-0"
+                          >
+                            K7
+                          </div>
+                          <div>
+                            <h5 class="text-sm font-bold text-brand-deep">
+                              Quý Thầy Cô Nhóm Toán 7
+                            </h5>
+                            <span class="text-[11px] text-slate-500"
+                              >Giáo viên phụ trách</span
+                            >
+                          </div>
+                        </div>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                          Thiết kế các bài toán số hữu tỉ, tỉ lệ thức, biểu đồ
+                          thống kê chuỗi thời gian các mốc son lịch sử và đại
+                          lượng tỉ lệ.
+                        </p>
+                      </div>
+                      <div
+                        class="mt-4 pt-3 border-t border-stone-100 flex items-center gap-1.5 text-[11px] text-slate-600"
+                      >
+                        <i
+                          class="fa-solid fa-check-circle text-emerald-600"
+                        ></i>
+                        Số hữu tỉ &amp; Thống kê số liệu
+                      </div>
+                    </div>
+
+                    <!-- Thẻ Nhóm Giáo Viên Khối 6 -->
+                    <div
+                      class="p-5 rounded-2xl bg-white border border-amber-200/90 shadow-sm hover:shadow-md transition-all flex flex-col justify-between"
+                    >
+                      <div>
+                        <div class="flex items-center justify-between mb-3">
+                          <span
+                            class="text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full bg-stone-100 text-stone-700 border border-stone-200"
+                          >
+                            Nhóm Toán Khối 6
+                          </span>
+                          <span class="text-stone-400 text-xs">
+                            <i class="fa-solid fa-cube"></i>
+                          </span>
+                        </div>
+                        <div class="flex items-center gap-3 mb-2.5">
+                          <div
+                            class="w-11 h-11 rounded-full bg-amber-100 text-brand-crimson flex items-center justify-center text-base font-bold shrink-0"
+                          >
+                            K6
+                          </div>
+                          <div>
+                            <h5 class="text-sm font-bold text-brand-deep">
+                              Quý Thầy Cô Nhóm Toán 6
+                            </h5>
+                            <span class="text-[11px] text-slate-500"
+                              >Giáo viên phụ trách</span
+                            >
+                          </div>
+                        </div>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                          Thiết kế các bài toán số học tự nhiên, tính chất chia
+                          hết, số nguyên tố, ước và bội gắn với năm sinh và hành
+                          trình ra đi tìm đường cứu nước của Bác.
+                        </p>
+                      </div>
+                      <div
+                        class="mt-4 pt-3 border-t border-stone-100 flex items-center gap-1.5 text-[11px] text-slate-600"
+                      >
+                        <i
+                          class="fa-solid fa-check-circle text-emerald-600"
+                        ></i>
+                        Số học tự nhiên &amp; Lý thuyết số
+                      </div>
+                    </div>
+
+                    <!-- Thẻ Nhóm Công Nghệ & Số Hóa -->
+                    <div
+                      class="p-5 rounded-2xl bg-white border border-amber-200/90 shadow-sm hover:shadow-md transition-all flex flex-col justify-between col-span-1 sm:col-span-2 lg:col-span-3"
+                    >
+                      <div>
+                        <div class="flex items-center justify-between mb-3">
+                          <span
+                            class="text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full bg-blue-100 text-blue-800 border border-blue-200"
+                          >
+                            Số Hóa &amp; Kỹ Thuật
+                          </span>
+                          <span class="text-blue-500 text-xs">
+                            <i class="fa-solid fa-laptop-code"></i>
+                          </span>
+                        </div>
+                        <div class="flex items-center gap-3 mb-2.5">
+                          <div
+                            class="w-11 h-11 rounded-full bg-blue-50 text-blue-700 flex items-center justify-center text-base font-bold shrink-0 border border-blue-200"
+                          >
+                            CNTT
+                          </div>
+                          <div>
+                            <h5 class="text-sm font-bold text-brand-deep">
+                              Nhóm Hỗ Trợ Kỹ Thuật &amp; Đa Phương Tiện
+                            </h5>
+                            <span class="text-[11px] text-slate-500"
+                              >Ứng dụng CNTT – Tổ Toán THCS Nguyễn Hiền</span
+                            >
+                          </div>
+                        </div>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                          Xây dựng nền tảng tương tác, đồng bộ âm thanh thuyết
+                          minh Audio, thanh điều hướng thông minh và giao diện
+                          di động tối ưu, thân thiện với học sinh cấp THCS.
+                        </p>
+                      </div>
+                      <div
+                        class="mt-4 pt-3 border-t border-stone-100 flex items-center gap-1.5 text-[11px] text-blue-700"
+                      >
+                        <i class="fa-solid fa-code text-blue-500"></i> Đa phương
+                        tiện &amp; Chuyển đổi số giáo dục
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Lời căn dặn của Bác Hồ & Thông điệp kết thúc -->
+                <div
+                  class="p-6 rounded-2xl bg-gradient-to-r from-amber-100/90 via-rose-50/70 to-amber-100/90 border border-amber-300 text-center space-y-3"
+                >
+                  <div class="text-amber-800 text-2xl">
+                    <i class="fa-solid fa-quote-left"></i>
+                  </div>
+                  <blockquote
+                    class="font-serif italic text-base sm:text-lg font-bold text-brand-darkred max-w-2xl mx-auto leading-relaxed"
+                  >
+                    "Vì lợi ích mười năm thì phải trồng cây,<br />
+                    Vì lợi ích trăm năm thì phải trồng người."
+                  </blockquote>
+                  <p class="text-xs text-stone-600 font-medium">
+                    — Chủ tịch Hồ Chí Minh —
+                  </p>
+                  <div class="w-16 h-0.5 bg-amber-400 mx-auto my-2"></div>
+                  <p
+                    class="text-xs text-slate-700 max-w-xl mx-auto leading-relaxed"
+                  >
+                    Tập thể Tổ Toán – Trường THCS Nguyễn Hiền nguyện noi gương
+                    Bác kính yêu, không ngừng học hỏi, đổi mới phương pháp giảng
+                    dạy, đưa công nghệ số và tình yêu quê hương vào từng bài
+                    giảng toán học cho các em học sinh thân yêu!
+                  </p>
+                </div>
+
+                <!-- Nút thao tác nhanh cuối thẻ -->
+                <div
+                  class="flex flex-wrap items-center justify-center gap-3 pt-2"
+                >
+                  <button
+                    onclick="toggleAudioPlayback()"
+                    class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-brand-darkred to-brand-crimson text-white text-xs sm:text-sm font-bold shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all flex items-center gap-2"
+                  >
+                    <i class="fa-solid fa-headphones"></i>
+                    <span>Nghe Lại Audio Lời Kết</span>
+                  </button>
+                  <button
+                    onclick="navigateTo('card-1')"
+                    class="px-5 py-2.5 rounded-xl bg-white border border-amber-300 text-brand-crimson hover:bg-amber-50 text-xs sm:text-sm font-bold shadow-sm transition-all flex items-center gap-2"
+                  >
+                    <i class="fa-solid fa-rotate-left"></i>
+                    <span>Xem lại từ Thẻ 1</span>
+                  </button>
+                  <button
+                    onclick="navigateTo('home')"
+                    class="px-5 py-2.5 rounded-xl bg-amber-100 text-amber-900 border border-amber-300 hover:bg-amber-200 text-xs sm:text-sm font-bold shadow-sm transition-all flex items-center gap-2"
+                  >
+                    <i class="fa-solid fa-house"></i>
+                    <span>Về Trang Chủ</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Footer điều hướng thẻ -->
+            <div
+              class="bg-stone-50 p-4 sm:p-6 border-t border-amber-200/60 flex flex-wrap items-center justify-between gap-3"
+            >
+              <button
+                onclick="navigateTo('home')"
+                class="text-xs font-semibold text-brand-crimson hover:text-brand-darkred flex items-center gap-1.5 transition-colors"
+              >
+                <i class="fa-solid fa-arrow-left"></i> Quay lại Trang Chủ
+              </button>
+              <div class="text-xs text-stone-500 font-medium">
+                Không Gian Văn Hóa Hồ Chí Minh • Tổ Toán – Nguyễn Hiền
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER CHÂN TRANG -->
+    <footer
+      class="bg-brand-deep text-stone-300 text-xs py-10 border-t-2 border-amber-500/40 mt-16"
+    >
+      <div class="max-w-6xl mx-auto px-4 text-center space-y-3">
+        <div
+          class="flex items-center justify-center gap-2 text-amber-300 font-bold uppercase text-xs sm:text-sm tracking-wider"
+        >
+          <i class="fa-solid fa-star text-amber-400"></i>
+          <span>Không Gian Văn Hóa Hồ Chí Minh</span>
+          <i class="fa-solid fa-star text-amber-400"></i>
+        </div>
+        <p class="text-amber-100/70 text-[11px] max-w-xl mx-auto">
+          Ứng dụng đa phương tiện tích hợp: Trang chủ, 9 thẻ câu chuyện lịch sử
+          và Thẻ Lời Kết từ Tổ Toán – Nguyễn Hiền với thuyết minh Audio &amp;
+          Thử thách Toán học sáng tạo.
+        </p>
+        <div class="w-12 h-0.5 bg-amber-500/30 mx-auto"></div>
+        <p class="text-stone-400 text-[10px]">
+          © 2026 Tự hào truyền thống vẻ vang của dân tộc Việt Nam • Tổ Toán
+          Trường THCS Nguyễn Hiền.
+        </p>
+      </div>
+    </footer>
+
+    <!-- JAVASCRIPT: LOGIC AUDIO TRANG CHỦ, 9 THẺ & LỜI KẾT -->
+    <script>
+      // Dữ liệu riêng cho Audio LỜI NGỎ tại Trang Chủ
+      const introAudioData = {
+        title: "Lời ngỏ: Không Gian Văn Hóa Hồ Chí Minh",
+        audioSrc: "./src/LOI-NGO.mp3", // Tệp âm thanh lời ngỏ (hoặc đường dẫn tương ứng)
+        audioText:
+          "Kính chào quý thầy cô và các bạn học sinh thân mến! Chào mừng mọi người đến với Không Gian Văn Hóa Hồ Chí Minh, một hành trình tương tác sinh động kết nối những câu chuyện lịch sử vẻ vang về cuộc đời của Chủ tịch Hồ Chí Minh vĩ đại với những con số toán học diệu kỳ. Hãy cùng lắng nghe từng câu chuyện, thấu hiểu ý nghĩa của mỗi con số và thử sức với các bài toán thú vị trên từng chặng đường lịch sử!",
+      };
+
+      // Dữ liệu 9 Thẻ câu chuyện & Thẻ Lời kết
+      const storiesData = {
+        "card-1": {
+          cardIndex: 1,
+          title: "Quê Hương Làng Sen Năm 1890",
+          subtitle: "Nơi chắp cánh tâm hồn và ý chí của Người",
+          tag: "Thẻ 1 – Quê hương Bác",
+          number: 1890,
+          audioSrc: "./src/AUDIO THE 1.mp3",
+          imageSrc: "./src/img/hinh-the1.png",
+          imageCaption:
+            "Khu di tích Kim Liên – Quê nội Bác Hồ tại Làng Sen, Nam Đàn, Nghệ An",
+          videoSrc: "",
+          numberMeaning:
+            "Năm 1890 là năm Bác Hồ kính yêu chào đời vào ngày 19 tháng 5 tại làng Hoàng Trù, xã Kim Liên, huyện Nam Đàn, tỉnh Nghệ An. Từ mái nhà tranh đơn sơ nơi xứ Nghệ kiên trung, Người đã nuôi dưỡng tình yêu thương vô bờ đối với đồng bào và quê hương đất nước.",
+          audioText:
+            "Câu chuyện thứ nhất: Quê hương Bác. Vào ngày 19 tháng 5 năm 1890, tại làng Hoàng Trù, huyện Nam Đàn, tỉnh Nghệ An, cậu bé Nguyễn Sinh Cung cất tiếng khóc chào đời. Lớn lên giữa câu hò ví giặm và cảnh lầm than của dân tộc dưới ách đô hộ, Người đã sớm nuôi dưỡng chí lớn cứu nước cứu dân.",
+          bodyHtml: `
+            <p class="font-serif italic text-base border-l-4 border-brand-crimson pl-4 py-2 text-brand-darkred bg-rose-50 rounded-r-xl font-medium">
+              "Tháp Mười đẹp nhất bông sen,<br>Việt Nam đẹp nhất có tên Bác Hồ."
+            </p>
+            <p class="mt-4">
+              Tại làng Sen và làng Hoàng Trù thuộc vùng đất Nam Đàn địa linh nhân kiệt, người cha là cụ Phó bảng Nguyễn Sinh Sắc và người mẹ tảo tần Hoàng Thị Loan đã dạy dỗ Bác về lòng nhân hậu, sự giản dị và tinh thần hiếu học.
+            </p>
+            <p>
+              Ngay từ thuở thiếu thời, chứng kiến nỗi đau khổ của nhân dân dưới ách áp bức, tâm hồn Nguyễn Sinh Cung đã nung nấu quyết tâm tìm ra con đường chân chính để đem lại tự do, độc lập cho Tổ quốc.
+            </p>
+          `,
+          mathChallenges: [
+            {
+              id: "c1_q1",
+              question:
+                "Xét con số 1890 (năm sinh của Bác): Tổng các chữ số của 1890 là 1 + 8 + 9 + 0 = 18. Số 1890 chia hết cho những số nào dưới đây?",
+              options: [
+                "Chia hết cho 2 và 5 nhưng không chia hết cho 9",
+                "Chia hết cho cả 2, 3, 5 và 9",
+                "Chỉ chia hết cho 9",
+                "Không chia hết cho 3",
+              ],
+              correctIndex: 1,
+              explanation:
+                "Số 1890 có tận cùng là 0 nên chia hết cho cả 2 và 5. Tổng các chữ số là 1 + 8 + 9 + 0 = 18 chia hết cho 9 (và do đó cũng chia hết cho 3). Vậy 1890 chia hết cho cả 2, 3, 5 và 9!",
+            },
+            {
+              id: "c1_q2",
+              question:
+                "Đến năm kỷ niệm 100 năm ngày sinh của Bác Hồ, đó là năm bao nhiêu?",
+              options: ["Năm 1980", "Năm 1990", "Năm 2000", "Năm 1975"],
+              correctIndex: 1,
+              explanation:
+                "Ta lấy năm sinh 1890 + 100 năm = năm 1990. Năm 1990 cũng là năm UNESCO tôn vinh Chủ tịch Hồ Chí Minh là Anh hùng giải phóng dân tộc và Danh nhân văn hóa kiệt xuất!",
+            },
+          ],
+        },
+
+        "card-2": {
+          cardIndex: 2,
+          title: "Ra Đi Tìm Đường Cứu Nước Năm 1911",
+          subtitle: "Khởi đầu cuộc hành trình vĩ đại từ Bến cảng Nhà Rồng",
+          tag: "Thẻ 2 – Ra đi tìm đường cứu nước",
+          number: 1911,
+          audioSrc: "./src/AUDIO THE 2.mp3",
+          imageSrc: "./src/img/hinh-the2.png",
+          imageCaption:
+            "Bến cảng Nhà Rồng bên dòng sông Sài Gòn – Dấu ấn ngày 5/6/1911 lịch sử",
+          videoSrc: "",
+          numberMeaning:
+            "Ngày 5 tháng 6 năm 1911, từ Bến cảng Nhà Rồng tại Sài Gòn, người thanh niên yêu nước Nguyễn Tất Thành bước lên chiếc tàu Amiral Latouche-Tréville ra đi tìm con đường cứu nước giải phóng dân tộc khi mới tròn 21 tuổi.",
+          audioText:
+            "Câu chuyện thứ hai: Ra đi tìm đường cứu nước năm 1911. Ngày 5 tháng 6 năm 1911, mang theo khát vọng cháy bỏng giành lại độc lập cho Tổ quốc, với tên gọi anh Ba, Người đã nhận làm phụ bếp trên con tàu buôn của Pháp để vượt trùng dương, mở đầu chuyến hành trình lịch sử 30 năm.",
+          bodyHtml: `
+            <p class="font-serif italic text-base border-l-4 border-brand-crimson pl-4 py-2 text-brand-darkred bg-rose-50 rounded-r-xl font-medium">
+              "Anh Ba hỏi: 'Tôi muốn đi ra nước ngoài, xem nước Pháp và các nước khác. Sau khi xem xét họ làm như thế nào, tôi sẽ trở về giúp đồng bào chúng ta'. Người bạn hỏi: 'Tiền đâu mà đi?'. Bác giơ hai bàn tay: 'Đây, tiền đây!'."
+            </p>
+            <p class="mt-4">
+              Cuộc chia ly tại Bến cảng Nhà Rồng là bước ngoặt vĩ đại của lịch sử Việt Nam. Chàng trai 21 tuổi đầy nhiệt huyết đã không ngại gian lao, làm đủ mọi nghề vất vả từ phụ bếp, cào tuyết đến bồi bàn để sống và học hỏi văn minh nhân loại.
+            </p>
+          `,
+          mathChallenges: [
+            {
+              id: "c2_q1",
+              question:
+                "Năm 1911, khi ra đi tìm đường cứu nước, Bác Hồ bao nhiêu tuổi? (Biết Bác sinh năm 1890)",
+              options: ["20 tuổi", "21 tuổi", "22 tuổi", "23 tuổi"],
+              correctIndex: 1,
+              explanation:
+                "Phép tính: 1911 - 1890 = 21 tuổi. Ở tuổi 21, Người đã dũng cảm vượt đại dương tìm con đường cứu dân, cứu nước!",
+            },
+            {
+              id: "c2_q2",
+              question:
+                "Con số 1911 có hiệu của số tạo bởi hai chữ số đầu (19) và số tạo bởi hai chữ số cuối (11) bằng bao nhiêu?",
+              options: ["6", "7", "8", "9"],
+              correctIndex: 2,
+              explanation: "Hiệu là: 19 - 11 = 8.",
+            },
+          ],
+        },
+
+        "card-3": {
+          cardIndex: 3,
+          title: "Trở Về Pác Bó Năm 1941",
+          subtitle: "Mùa xuân lịch sử sau 30 năm bôn ba hải ngoại",
+          tag: "Thẻ 3 – Trở về Pác Bó",
+          number: 1941,
+          audioSrc: "./src/AUDIO THE 3.mp3",
+          imageSrc: "./src/img/hinh-the3.png",
+          imageCaption: "Suối Lê-nin và non nước Pác Bó (Hà Quảng, Cao Bằng)",
+          videoSrc: "",
+          numberMeaning:
+            "Ngày 28 tháng 1 năm 1941, sau đúng 30 năm bôn ba khắp bốn biển năm châu, Bác Hồ đã đặt bước chân thiêng liêng trở về Tổ quốc qua cột mốc 108 tại Cao Bằng, trực tiếp lãnh đạo phong trào cách mạng Việt Nam.",
+          audioText:
+            "Câu chuyện thứ ba: Trở về Pác Bó năm 1941. Sau 30 năm tìm đường cứu nước qua hàng chục quốc gia, mùa xuân năm 1941, Bác đã trở về hang Pác Bó, Cao Bằng. Người tự tay dịch tài liệu, dạy chữ cho đồng bào và thành lập Mặt trận Việt Minh dấy lên cao trào cách mạng.",
+          bodyHtml: `
+            <p class="font-serif italic text-base border-l-4 border-brand-crimson pl-4 py-2 text-brand-darkred bg-rose-50 rounded-r-xl font-medium">
+              "Sáng ra bờ suối, tối vào hang,<br>Cháo bẹ rau măng vẫn sẵn sàng.<br>Bàn đá chông chênh dịch sử Đảng,<br>Cuộc đời cách mạng thật là sang!"
+            </p>
+            <p class="mt-4">
+              Tại hang Cốc Bó, bên dòng suối Lê-nin trong xanh và ngọn núi Các Mác hùng vĩ, điều kiện sinh hoạt vô cùng thiếu thốn nhưng Bác luôn giữ tinh thần lạc quan, vạch ra đường lối chiến lược đưa cách mạng Việt Nam đi từ thắng lợi này đến thắng lợi khác.
+            </p>
+          `,
+          mathChallenges: [
+            {
+              id: "c3_q1",
+              question:
+                "Bác ra đi năm 1911 và trở về Tổ quốc năm 1941. Hỏi hành trình bôn ba tìm đường cứu nước của Bác kéo dài bao nhiêu năm?",
+              options: ["25 năm", "28 năm", "30 năm", "32 năm"],
+              correctIndex: 2,
+              explanation:
+                "Phép tính: 1941 - 1911 = 30 năm bôn ba qua hơn 30 quốc gia và vùng lãnh thổ khắp các châu lục!",
+            },
+            {
+              id: "c3_q2",
+              question:
+                "Cột mốc biên giới nơi Bác đặt chân về Tổ quốc là mốc số 108. Số 108 chia cho 12 được kết quả là bao nhiêu?",
+              options: ["8", "9", "10", "11"],
+              correctIndex: 1,
+              explanation:
+                "Ta có: 108 : 12 = 9. Con số 108 là cột mốc lịch sử thiêng liêng tại huyện Hà Quảng, Cao Bằng.",
+            },
+          ],
+        },
+
+        "card-4": {
+          cardIndex: 4,
+          title: "Ngày Độc Lập 2/9/1945",
+          subtitle: "Khai sinh nước Việt Nam Dân chủ Cộng hòa",
+          tag: "Thẻ 4 – Ngày Độc lập",
+          number: 1945,
+          audioSrc: "./src/AUDIO THE 4.mp3",
+          imageSrc: "./src/img/hinh-the4.png",
+          imageCaption:
+            "Quảng trường Ba Đình lịch sử – Nơi Bác đọc Tuyên ngôn Độc lập ngày 2/9/1945",
+          videoSrc: "",
+          numberMeaning:
+            "Ngày 2 tháng 9 năm 1945 là ngày Chủ tịch Hồ Chí Minh đọc bản Tuyên ngôn Độc lập tại Quảng trường Ba Đình, chấm dứt hơn 80 năm ách đô hộ của thực dân phong kiến và mở ra kỷ nguyên mới độc lập tự do.",
+          audioText:
+            "Câu chuyện thứ tư: Ngày Độc lập 1945. Chiều ngày 2 tháng 9 năm 1945, hàng vạn người dân thủ đô Hà Nội tập trung tại Quảng trường Ba Đình lịch sử. Bác Hồ đọc bản Tuyên ngôn Độc lập khẳng định quyền sống, quyền tự do và quyền mưu cầu hạnh phúc của dân tộc Việt Nam.",
+          bodyHtml: `
+            <p class="font-serif italic text-base border-l-4 border-brand-crimson pl-4 py-2 text-brand-darkred bg-rose-50 rounded-r-xl font-medium">
+              "Nước Việt Nam có quyền hưởng tự do và độc lập, và sự thật đã thành một nước tự do độc lập. Toàn thể dân tộc Việt Nam quyết đem tất cả tinh thần và lực lượng, tính mạng và của cải để giữ vững quyền tự do, độc lập ấy!"
+            </p>
+            <p class="mt-4">
+              Khoảnh khắc Người dừng lại và hỏi đồng bào: <em>"Tôi nói đồng bào nghe rõ không?"</em> đã làm hàng triệu con tim xúc động, gắn kết trọn vẹn tình cảm giữa vị lãnh tụ kính yêu và toàn thể quốc dân đồng bào.
+            </p>
+          `,
+          mathChallenges: [
+            {
+              id: "c4_q1",
+              question:
+                "Tính giá trị biểu thức: Năm Độc lập (1945) trừ đi Năm Bác về nước (1941) được mấy năm?",
+              options: ["3 năm", "4 năm", "5 năm", "6 năm"],
+              correctIndex: 1,
+              explanation:
+                "Phép tính: 1945 - 1941 = 4 năm. Chỉ trong vòng 4 năm từ khi về nước chỉ đạo, Mặt trận Việt Minh đã chớp thời cơ lãnh đạo cuộc Cách mạng Tháng Tám toàn thắng!",
+            },
+            {
+              id: "c4_q2",
+              question:
+                "Ngày Độc lập là ngày 2 tháng 9. Tích của ngày (2) và tháng (9) bằng bao nhiêu?",
+              options: ["11", "16", "18", "20"],
+              correctIndex: 2,
+              explanation: "Tích của ngày và tháng là: 2 × 9 = 18.",
+            },
+          ],
+        },
+
+        "card-5": {
+          cardIndex: 5,
+          title: "5 Điều Bác Hồ Dạy",
+          subtitle: "Kim chỉ nam rèn luyện cho thanh thiếu niên, nhi đồng",
+          tag: "Thẻ 5 – 5 điều Bác dạy",
+          number: 5,
+          audioSrc: "./src/AUDIO THE 5.mp3",
+          imageSrc: "./src/img/hinh-the5.png",
+          imageCaption:
+            "Thế hệ măng non đất nước thi đua học tập và làm theo lời Bác dạy",
+          videoSrc: "",
+          numberMeaning:
+            "Con số 5 tượng trưng cho 5 điều Bác Hồ dạy thiếu niên nhi đồng: 1. Yêu Tổ quốc, yêu đồng bào; 2. Học tập tốt, lao động tốt; 3. Đoàn kết tốt, kỷ luật tốt; 4. Giữ gìn vệ sinh thật tốt; 5. Khiêm tốn, thật thà, dũng cảm.",
+          audioText:
+            "Câu chuyện thứ năm: 5 điều Bác dạy. Bác Hồ luôn dành cho các cháu thiếu niên nhi đồng tình yêu thương bao la nhất. Người căn dặn các cháu thực hiện tốt 5 điều: từ yêu quê hương, học tập, giữ kỷ luật, vệ sinh sạch sẽ cho đến khiêm tốn, thật thà và dũng cảm.",
+          bodyHtml: `
+            <div class="grid grid-cols-1 sm:grid-cols-5 gap-2.5 text-center text-xs my-5 font-semibold">
+              <div class="p-3 bg-red-50 text-brand-darkred rounded-xl border border-red-200">1. Yêu Tổ quốc, yêu đồng bào</div>
+              <div class="p-3 bg-red-50 text-brand-darkred rounded-xl border border-red-200">2. Học tập tốt, lao động tốt</div>
+              <div class="p-3 bg-red-50 text-brand-darkred rounded-xl border border-red-200">3. Đoàn kết tốt, kỷ luật tốt</div>
+              <div class="p-3 bg-red-50 text-brand-darkred rounded-xl border border-red-200">4. Giữ vệ sinh thật tốt</div>
+              <div class="p-3 bg-red-50 text-brand-darkred rounded-xl border border-red-200">5. Khiêm tốn, thật thà, dũng cảm</div>
+            </div>
+            <p>
+              5 điều dạy ngắn gọn nhưng hàm chứa đầy đủ các đức tính của một công dân có ích cho xã hội, giúp bồi dưỡng thế hệ măng non trở thành chủ nhân tương lai của đất nước.
+            </p>
+          `,
+          mathChallenges: [
+            {
+              id: "c5_q1",
+              question: "Trong toán học, số 5 là loại số nào sau đây?",
+              options: [
+                "Hợp số chẵn",
+                "Số nguyên tố lẻ",
+                "Số chính phương",
+                "Số chia hết cho 2",
+              ],
+              correctIndex: 1,
+              explanation:
+                "Số 5 chỉ có hai ước dương là 1 và 5, đồng thời không chia hết cho 2, nên 5 là một số nguyên tố lẻ!",
+            },
+            {
+              id: "c5_q2",
+              question:
+                "Một bạn học sinh thực hiện tốt 5 điều Bác dạy. Nếu mỗi ngày bạn ấy rèn luyện 5 điều, thì sau 1 tuần (7 ngày) bạn ấy đã có bao nhiêu lượt hành động tốt theo 5 điều?",
+              options: ["25 lượt", "30 lượt", "35 lượt", "40 lượt"],
+              correctIndex: 2,
+              explanation:
+                "Phép tính: 5 điều × 7 ngày = 35 lượt hành động rèn luyện tốt!",
+            },
+          ],
+        },
+
+        "card-6": {
+          cardIndex: 6,
+          title: "79 Mùa Xuân Kính Yêu",
+          subtitle: "Cuộc đời thanh bạch dâng trọn cho non sông",
+          tag: "Thẻ 6 – 79 mùa xuân",
+          number: 79,
+          audioSrc: "./src/AUDIO THE 6.mp3",
+          imageSrc: "./src/img/hinh-the6.png",
+          imageCaption: "Bác Hồ – Tấm gương ngời sáng trọn đời vì dân, vì nước",
+          videoSrc: "",
+          numberMeaning:
+            "Con số 79 gắn liền với 79 mùa xuân cuộc đời Bác Hồ (1890 - 1969). Người đã dành trọn vẹn 79 năm tuổi đời không vì riêng mình, mà hoàn toàn vì độc lập của dân tộc và ấm no, tự do của nhân dân.",
+          audioText:
+            "Câu chuyện thứ sáu: 79 mùa xuân kính yêu. Bác Hồ đã sống một cuộc đời trọn vẹn 79 mùa xuân thanh bạch, mẫu mực. Người không giữ lại gì cho riêng mình, từ chiếc áo nâu, đôi dép cao su đến ngôi nhà sàn mộc mạc bên bờ ao cá.",
+          bodyHtml: `
+            <p class="font-serif italic text-base border-l-4 border-brand-crimson pl-4 py-2 text-brand-darkred bg-rose-50 rounded-r-xl font-medium">
+              "Bác để tình thương cho chúng con<br>Một đời thanh bạch, chẳng vàng son<br>Manh áo nâu bình dị, đôi dép lốp<br>Hồn lộng gió thời đại, chẳng hề mòn."
+            </p>
+            <p class="mt-4">
+              79 mùa xuân của Bác là biểu tượng sáng ngời của tinh thần 'Cần, Kiệm, Liêm, Chính, Chí công vô tư'. Tấm gương của Người là nguồn cảm hứng vô tận cho các thế hệ người Việt Nam hôm nay và mai sau.
+            </p>
+          `,
+          mathChallenges: [
+            {
+              id: "c6_q1",
+              question:
+                "Số 79 là một số nguyên tố. Số nguyên tố liền kề trước số 79 là số nào?",
+              options: ["71", "73", "75", "77"],
+              correctIndex: 1,
+              explanation:
+                "Dãy các số nguyên tố lân cận: 71, 73, 79, 83. Vậy số nguyên tố đứng ngay trước 79 là 73!",
+            },
+            {
+              id: "c6_q2",
+              question: "Tìm giá trị x biết: x + 1890 = 1969?",
+              options: ["69", "70", "79", "89"],
+              correctIndex: 2,
+              explanation:
+                "Ta có: x = 1969 - 1890 = 79. Đúng bằng 79 mùa xuân trong cuộc đời Bác Hồ kính yêu!",
+            },
+          ],
+        },
+
+        "card-7": {
+          cardIndex: 7,
+          title: "Trồng Cây Mười Năm, Trồng Người Trăm Năm",
+          subtitle: "Tầm nhìn thiên tài về giáo dục và đào tạo con người",
+          tag: "Thẻ 7 – Trồng người",
+          number: 100,
+          audioSrc: "./src/AUDIO THE 7.mp3",
+          imageSrc: "./src/img/hinh-the7.png",
+          imageCaption:
+            "Mùa xuân là Tết trồng cây – Tầm nhìn xanh và bài học giáo dục muôn đời",
+          videoSrc: "",
+          numberMeaning:
+            "Con số 10 và 100 gắn với lời dạy bất hủ của Bác ngày 13/9/1958: 'Vì lợi ích mười năm thì phải trồng cây, vì lợi ích trăm năm thì phải trồng người'. Đó là chiến lược bồi dưỡng nguồn lực con người muôn đời cho đất nước.",
+          audioText:
+            "Câu chuyện thứ bảy: Trồng người trăm năm. Tháng 9 năm 1958, tại lớp bồi dưỡng cán bộ, Bác đã căn dặn: Vì lợi ích mười năm thì phải trồng cây, vì lợi ích trăm năm thì phải trồng người. Bác luôn nhấn mạnh giáo dục là quốc sách hàng đầu.",
+          bodyHtml: `
+            <p class="font-serif italic text-base border-l-4 border-brand-crimson pl-4 py-2 text-brand-darkred bg-rose-50 rounded-r-xl font-medium">
+              "Vì lợi ích mười năm thì phải trồng cây,<br>Vì lợi ích trăm năm thì phải trồng người."
+            </p>
+            <p class="mt-4">
+              Bác dạy chúng ta rằng một cái cây mất mười năm để vươn cao che bóng mát, nhưng để giáo dục một con người tài đức vẹn toàn phục vụ đất nước đòi hỏi cả sự kiên trì, công phu của cả trăm năm và nhiều thế hệ tiếp nối.
+            </p>
+          `,
+          mathChallenges: [
+            {
+              id: "c7_q1",
+              question: "Con số 100 gấp con số 10 bao nhiêu lần?",
+              options: ["5 lần", "10 lần", "20 lần", "50 lần"],
+              correctIndex: 1,
+              explanation:
+                "Phép tính: 100 : 10 = 10 lần. Trồng người là sự nghiệp lâu dài gấp nhiều lần trồng cây!",
+            },
+            {
+              id: "c7_q2",
+              question:
+                "Nhà trường phát động phong trào 'Tết trồng cây', mỗi khối trồng được 10 cây xanh. Hỏi có 10 khối lớp thì tổng số cây trồng được là bao nhiêu?",
+              options: ["50 cây", "80 cây", "100 cây", "120 cây"],
+              correctIndex: 2,
+              explanation:
+                "Phép tính: 10 × 10 = 100 cây xanh làm đẹp môi trường học đường!",
+            },
+          ],
+        },
+
+        "card-8": {
+          cardIndex: 8,
+          title: "Năm 1969 & Bản Di Chúc Lịch Sử",
+          subtitle: "Muôn vàn tình thương yêu gửi lại mai sau",
+          tag: "Thẻ 8 – Năm 1969",
+          number: 1969,
+          audioSrc: "./src/AUDIO THE 8.mp3",
+          imageSrc: "./src/img/hinh-the8.png",
+          imageCaption:
+            "Khu nhà sàn Bác Hồ tại Phủ Chủ tịch – Nơi Bác viết Bản Di chúc lịch sử",
+          videoSrc: "",
+          numberMeaning:
+            "Năm 1969, trước lúc đi xa, Bác Hồ đã để lại bản Di chúc thiêng liêng – Bảo vật quốc gia kết tinh toàn bộ tư tưởng đạo đức, căn dặn về chỉnh đốn Đảng, xây dựng lại đất nước đàng hoàng hơn, to đẹp hơn.",
+          audioText:
+            "Câu chuyện thứ tám: Năm 1969 và Bản Di chúc lịch sử. Tháng 9 năm 1969, Bác Hồ đi xa giữa lúc cuộc kháng chiến chống Mỹ đang ở giai đoạn quyết liệt. Người để lại muôn vàn tình thân yêu cho toàn dân, toàn Đảng, cho toàn thể bộ đội và các cháu thiếu niên nhi đồng.",
+          bodyHtml: `
+            <p class="font-serif italic text-base border-l-4 border-brand-crimson pl-4 py-2 text-brand-darkred bg-rose-50 rounded-r-xl font-medium">
+              "Cuối cùng, tôi để lại muôn vàn tình thân yêu cho toàn dân, toàn Đảng, cho toàn thể bộ đội, cho các cháu thanh niên và nhi đồng..."
+            </p>
+            <p class="mt-4">
+              Bản Di chúc được Bác chau chuốt từng chữ qua các mùa sinh nhật từ năm 1965 đến năm 1969. Người tin tưởng chắc chắn kháng chiến nhất định thắng lợi, non sông nhất định thống nhất một nhà.
+            </p>
+          `,
+          mathChallenges: [
+            {
+              id: "c8_q1",
+              question:
+                "Bác bắt đầu viết tài liệu Di chúc từ tháng 5/1965 và hoàn thiện vào tháng 5/1969. Bác đã viết và chỉnh sửa trong bao nhiêu năm?",
+              options: ["3 năm", "4 năm", "5 năm", "6 năm"],
+              correctIndex: 1,
+              explanation:
+                "Phép tính: 1969 - 1965 = 4 năm trăn trở từng câu từng chữ dành cho đồng bào!",
+            },
+            {
+              id: "c8_q2",
+              question:
+                "Xét con số 1969: Tích của hai số nguyên tố nào dưới đây bằng 1969?",
+              options: ["11 × 179", "13 × 151", "17 × 115", "19 × 103"],
+              correctIndex: 0,
+              explanation:
+                "Thực hiện phép tính: 11 × 179 = 1969. Cả 11 và 179 đều là các số nguyên tố!",
+            },
+          ],
+        },
+
+        "card-9": {
+          cardIndex: 9,
+          title: "Chặng Đường 1945–1969 & Con Số 24",
+          subtitle:
+            "24 năm Người trực tiếp chèo lái con thuyền cách mạng Việt Nam",
+          tag: "Thẻ 9 – Chặng đường 1945-1969",
+          number: 24,
+          audioSrc: "./src/AUDIO THE 9.mp3",
+          imageSrc: "./src/img/hinh-the9.png",
+          imageCaption:
+            "Chủ tịch Hồ Chí Minh cùng Trung ương Đảng lãnh đạo cách mạng Việt Nam giai đoạn 1945–1969",
+          videoSrc: "",
+          numberMeaning:
+            "Con số 24 ghi dấu 24 năm lịch sử (1945 – 1969) Chủ tịch Hồ Chí Minh trên cương vị nguyên thủ quốc gia, chèo lái con thuyền cách mạng Việt Nam vượt qua muôn vàn thử thách, từ ngày Tuyên ngôn Độc lập năm 1945 đến khi Người để lại bản Di chúc thiêng liêng năm 1969.",
+          audioText:
+            "Câu chuyện thứ chín: Chặng đường 1945 đến 1975. Trải qua đúng 30 năm kháng chiến kiên cường từ mùa thu độc lập 1945 đến ngày 30 tháng 4 năm 1975, quân và dân ta đã giải phóng hoàn toàn miền Nam, thống nhất non sông, biến ước nguyện thiêng liêng của Bác Hồ thành hiện thực.",
+          bodyHtml: `
+            <p class="font-serif italic text-base border-l-4 border-brand-crimson pl-4 py-2 text-brand-darkred bg-rose-50 rounded-r-xl font-medium">
+              "Không có gì quý hơn độc lập, tự do!"<br>
+              <span class="text-xs font-sans not-italic text-stone-600 block mt-1">— Lời kêu gọi thiêng liêng của Chủ tịch Hồ Chí Minh</span>
+            </p>
+            <p class="mt-4 leading-relaxed">
+              Từ mùa thu lịch sử ngày 2 tháng 9 năm 1945 khi đọc Bản Tuyên ngôn Độc lập tại Ba Đình đến năm 1969, đúng <strong>24 năm</strong> Bác Hồ đã dành trọn vẹn tâm huyết và trí tuệ lãnh đạo cách mạng nước nhà vượt qua cuộc kháng chiến trường kỳ, bảo vệ nền độc lập tự do và đặt nền móng vững chắc cho ngày non sông thu về một mối.
+            </p>
+          `,
+          mathChallenges: [
+            {
+              id: "c9_q1",
+              question:
+                "Khoảng thời gian từ năm Tuyên ngôn Độc lập (1945) đến năm Bác Hồ để lại bản Di chúc lịch sử (1969) là bao nhiêu năm?",
+              options: ["20 năm", "22 năm", "24 năm", "26 năm"],
+              correctIndex: 2,
+              explanation:
+                "Phép tính: 1969 - 1945 = 24 năm Người trực tiếp chèo lái con thuyền cách mạng Việt Nam!",
+            },
+            {
+              id: "c9_q2",
+              question:
+                "Trong toán học, số 24 có tất cả bao nhiêu ước số tự nhiên?",
+              options: ["6 ước", "8 ước", "10 ước", "12 ước"],
+              correctIndex: 1,
+              explanation:
+                "Các ước tự nhiên của 24 là: 1, 2, 3, 4, 6, 8, 12, 24. Tổng cộng số 24 có đúng 8 ước số tự nhiên!",
+            },
+          ],
+        },
+
+        conclusion: {
+          cardIndex: 10,
+          title: "Lời Kết: Hành Trình Bất Tận Cùng Di Sản Bác Hồ",
+          subtitle:
+            "Công trình giáo dục tâm huyết từ Tổ Toán – Trường THCS Nguyễn Hiền",
+          tag: "Lời Kết – Thông Điệp Tri Ân",
+          number: "KẾT",
+          audioSrc: "./src/LOI-KET.mp3",
+          imageSrc: "./src/img/hinh-loiket.jpg",
+          imageCaption:
+            "Tập thể Thầy Cô giáo và Học sinh Trường THCS Nguyễn Hiền tự hào tiếp bước con đường cách mạng vẻ vang của Bác",
+          videoSrc: "",
+          numberMeaning:
+            "Lời kết khép lại 9 chặng đường lịch sử thiêng liêng, nhưng mở ra hành trình học tập, rèn luyện và cống hiến không ngừng nghỉ của mỗi thầy cô giáo và học sinh trường THCS Nguyễn Hiền.",
+          audioText:
+            "Kính thưa quý thầy cô giáo, các bậc phụ huynh cùng toàn thể các bạn học sinh thân mến! Hành trình trải nghiệm Không Gian Văn Hóa Hồ Chí Minh xin được khép lại trong niềm xúc động sâu sắc và lòng biết ơn vô hạn đối với Chủ tịch Hồ Chí Minh muôn vàn kính yêu. Đi qua 9 dấu mốc lịch sử cùng những con số thiêng liêng, chúng ta không chỉ ôn lại cuộc đời hoạt động cách mạng vĩ đại của Người, mà còn cảm nhận sâu sắc sự gắn kết diệu kỳ giữa trang sử hào hùng của dân tộc với tư duy logic của Toán học. Tập thể Thầy và Trò Tổ Toán – Trường THCS Nguyễn Hiền xin kính chúc toàn thể quý vị và các bạn học sinh luôn dồi dào sức khỏe, thắp sáng niềm tin, không ngừng học tập và làm theo tư tưởng, đạo đức, phong cách Hồ Chí Minh!",
+          bodyHtml: `
+            <div class="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-amber-100/90 to-rose-100/90 border-l-4 border-brand-crimson text-brand-darkred font-medium text-sm sm:text-base leading-relaxed">
+              "Dân ta phải biết sử ta,<br>Cho tường gốc tích nước nhà Việt Nam."<br>
+              <span class="text-xs font-sans not-italic text-stone-600 block mt-1.5 font-normal">— Chủ tịch Hồ Chí Minh (Lịch sử nước ta, 1942)</span>
+            </div>
+
+            <p class="mt-4 leading-relaxed">
+              Kính thưa quý thầy cô giáo, quý bậc phụ huynh và các em học sinh thân mến!
+            </p>
+
+            <p class="leading-relaxed">
+              Hành trình qua <strong>9 thẻ câu chuyện lịch sử</strong> của <em>Không Gian Văn Hóa Hồ Chí Minh</em> đã đưa chúng ta lần giở từng trang sử vàng chói lọi trong cuộc đời và sự nghiệp cách mạng vĩ đại của Bác Hồ: từ mái nhà tranh đơn sơ tại làng Hoàng Trù năm <strong>1890</strong>, cuộc ra đi tìm đường cứu nước từ Bến cảng Nhà Rồng năm <strong>1911</strong>, mốc son thành lập Đảng Cộng sản Việt Nam năm <strong>1930</strong>, ngày Bác trở về Pác Bó năm <strong>1941</strong>, khúc khải hoàn Tuyên ngôn Độc lập năm <strong>1945</strong>, thiên sử vàng Điện Biên Phủ năm <strong>1954</strong>, Đại hội thống nhất ý chí năm <strong>1960</strong>, Bản Di chúc thiêng liêng năm <strong>1969</strong> cho đến chặng đường <strong>24 năm</strong> Người trực tiếp lãnh đạo non sông.
+            </p>
+
+            <p class="leading-relaxed">
+              Mỗi con số lịch sử không đơn thuần là một mốc thời gian, mà là một nhịp cầu nối liền quá khứ vẻ vang với tương lai tươi sáng. Qua lăng kính của <strong>Toán học</strong>, những con số ấy trở nên sống động, gần gũi, giúp các em học sinh rèn luyện tư duy logic, phân tích quy luật và thấu hiểu chiều sâu của lịch sử dân tộc.
+            </p>
+
+            <div class="my-5 p-4 rounded-xl bg-amber-50 border border-amber-200/90 text-amber-950 text-xs sm:text-sm">
+              <div class="font-bold text-brand-crimson flex items-center gap-2 mb-1.5">
+                <i class="fa-solid fa-seedling text-base"></i> Thông Điệp Từ Không Gian Văn Hóa Hồ Chí Minh
+              </div>
+              <p class="leading-relaxed">
+                Học tập và làm theo tấm gương Bác không phải là những điều xa xôi, mà bắt đầu từ chính sự chăm chỉ trong từng giờ học, tính chính xác và trung thực trong từng bài toán, tinh thần đoàn kết giúp đỡ bạn bè và tình yêu thương gia đình, quê hương, đất nước.
+              </p>
+            </div>
+          `,
+          mathChallenges: [],
+        },
+      };
+
+      let currentActiveCard = "card-1";
+      let isSpeaking = false;
+      let speechUtterance = null;
+      let nativeAudio = null;
+
+      // Quản lý riêng cho Audio Lời Ngỏ
+      let introNativeAudio = null;
+      let isIntroSpeaking = false;
+
+      // ================= ĐIỀU HƯỚNG TRANG =================
+      function navigateTo(targetPage) {
+        stopAudioPlayback();
+        stopIntroAudioPlayback();
+
+        document.querySelectorAll(".nav-btn, .m-nav-btn").forEach((btn) => {
+          btn.classList.toggle(
+            "nav-item-active",
+            btn.dataset.page === targetPage,
+          );
+        });
+        const targetNavBtn = document.getElementById("nav-btn-" + targetPage);
+        if (targetNavBtn) {
+          targetNavBtn.scrollIntoView({
+            block: "nearest",
+            inline: "center",
+            behavior: "smooth",
+          });
+        }
+
+        const homeView = document.getElementById("page-home");
+        const cardView = document.getElementById("card-detail-view");
+
+        if (targetPage === "home") {
+          homeView.classList.remove("hidden");
+          cardView.classList.add("hidden");
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        } else if (storiesData[targetPage]) {
+          homeView.classList.add("hidden");
+          cardView.classList.remove("hidden");
+          currentActiveCard = targetPage;
+          renderCardDetail(targetPage);
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+      }
+
+      function scrollNavTrack(amount) {
+        const nav = document.getElementById("main-desktop-nav");
+        if (nav) nav.scrollBy({ left: amount, behavior: "smooth" });
+      }
+
+      // ================= QUẢN LÝ AUDIO LỜI NGỎ (TRANG CHỦ) =================
+      function initIntroAudio() {
+        introNativeAudio = document.getElementById("intro-native-audio");
+        const sourceInfo = document.getElementById("intro-audio-source-info");
+        if (sourceInfo) {
+          sourceInfo.innerHTML = `File: <span class="font-mono text-brand-crimson font-medium">${introAudioData.audioSrc}</span>`;
+        }
+        if (introNativeAudio) {
+          introNativeAudio.src = introAudioData.audioSrc;
+          introNativeAudio.load();
+
+          const seekBar = document.getElementById("intro-audio-seek-bar");
+          const timeDisplay = document.getElementById(
+            "intro-audio-time-display",
+          );
+
+          introNativeAudio.addEventListener("timeupdate", () => {
+            if (
+              !isNaN(introNativeAudio.duration) &&
+              introNativeAudio.duration > 0
+            ) {
+              const progress =
+                (introNativeAudio.currentTime / introNativeAudio.duration) *
+                100;
+              seekBar.value = progress;
+              timeDisplay.textContent = formatAudioTime(
+                introNativeAudio.currentTime,
+              );
+            }
+          });
+
+          introNativeAudio.addEventListener("ended", () => {
+            resetIntroAudioUI();
+          });
+
+          introNativeAudio.addEventListener("error", () => {
+            console.warn(
+              "Chưa có tệp MP3 lời ngỏ nội bộ, sẵn sàng dùng Web Speech API.",
+            );
+          });
+        }
+      }
+
+      function toggleIntroAudioPlayback() {
+        stopAudioPlayback(); // Ngắt audio thẻ nếu đang phát
+
+        if (!introNativeAudio) initIntroAudio();
+
+        if (!introNativeAudio.paused) {
+          introNativeAudio.pause();
+          updateIntroAudioUI(false);
+        } else if (isIntroSpeaking) {
+          stopSpeechSynthesis();
+          isIntroSpeaking = false;
+          updateIntroAudioUI(false);
+        } else {
+          const playPromise = introNativeAudio.play();
+          if (playPromise !== undefined) {
+            playPromise
+              .then(() => {
+                updateIntroAudioUI(true);
+              })
+              .catch((err) => {
+                console.log(
+                  "Phát audio lời ngỏ qua Web Speech API do lỗi tải file:",
+                  err,
+                );
+                startSpeechSynthesis(introAudioData.audioText, () => {
+                  isIntroSpeaking = false;
+                  updateIntroAudioUI(false);
+                });
+                isIntroSpeaking = true;
+                updateIntroAudioUI(true);
+              });
+          } else {
+            startSpeechSynthesis(introAudioData.audioText, () => {
+              isIntroSpeaking = false;
+              updateIntroAudioUI(false);
+            });
+            isIntroSpeaking = true;
+            updateIntroAudioUI(true);
+          }
+        }
+      }
+
+      function onIntroAudioSeek(value) {
+        if (introNativeAudio && !isNaN(introNativeAudio.duration)) {
+          introNativeAudio.currentTime =
+            (value / 100) * introNativeAudio.duration;
+        }
+      }
+
+      function stopIntroAudioPlayback() {
+        if (introNativeAudio && !introNativeAudio.paused) {
+          introNativeAudio.pause();
+          introNativeAudio.currentTime = 0;
+        }
+        if (isIntroSpeaking) {
+          stopSpeechSynthesis();
+          isIntroSpeaking = false;
+        }
+        resetIntroAudioUI();
+      }
+
+      function resetIntroAudioUI() {
+        updateIntroAudioUI(false);
+        const seekBar = document.getElementById("intro-audio-seek-bar");
+        const timeDisplay = document.getElementById("intro-audio-time-display");
+        if (seekBar) seekBar.value = 0;
+        if (timeDisplay) timeDisplay.textContent = "00:00";
+      }
+
+      function updateIntroAudioUI(playing) {
+        const icon = document.getElementById("intro-audio-icon");
+        const badge = document.getElementById("intro-audio-status-badge");
+        const waveBars = document.querySelectorAll(".intro-wave-bar");
+
+        if (playing) {
+          if (icon) icon.className = "fa-solid fa-pause";
+          if (badge) {
+            badge.textContent = "Đang phát lời ngỏ...";
+            badge.className =
+              "text-[10px] px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-bold border border-emerald-300";
+          }
+          waveBars.forEach((wb) => (wb.style.animationPlayState = "running"));
+        } else {
+          if (icon) icon.className = "fa-solid fa-play ml-0.5";
+          if (badge) {
+            badge.textContent = "Sẵn sàng phát";
+            badge.className =
+              "text-[10px] px-2.5 py-0.5 rounded-full bg-stone-200 text-stone-700 font-semibold";
+          }
+          waveBars.forEach((wb) => (wb.style.animationPlayState = "paused"));
+        }
+      }
+
+      // ================= QUẢN LÝ AUDIO 9 THẺ CÂU CHUYỆN & THẺ LỜI KẾT =================
+      function renderCardDetail(cardKey) {
+        const data = storiesData[cardKey];
+        if (!data) return;
+
+        const isConclusion = cardKey === "conclusion";
+
+        document.getElementById("story-tag").textContent = data.tag;
+        document.getElementById("story-title").textContent = data.title;
+        document.getElementById("story-subtitle").textContent = data.subtitle;
+
+        const badgeLabel = document.getElementById("story-number-badge-label");
+        if (badgeLabel) {
+          badgeLabel.textContent = isConclusion
+            ? "Thông điệp"
+            : "Con số lịch sử";
+        }
+        document.getElementById("story-number-badge").textContent = isConclusion
+          ? "KẾT"
+          : data.number;
+        document.getElementById("current-badge-indicator").textContent =
+          isConclusion ? "Lời Kết" : `Thẻ ${data.cardIndex} / 9`;
+
+        const numberMeaningSec = document.getElementById(
+          "card-number-meaning-section",
+        );
+        const mathChallengeSec = document.getElementById(
+          "card-math-challenge-section",
+        );
+        const conclusionSec = document.getElementById(
+          "conclusion-team-section",
+        );
+
+        if (isConclusion) {
+          if (numberMeaningSec) numberMeaningSec.classList.add("hidden");
+          if (mathChallengeSec) mathChallengeSec.classList.add("hidden");
+          if (conclusionSec) conclusionSec.classList.remove("hidden");
+        } else {
+          if (numberMeaningSec) numberMeaningSec.classList.remove("hidden");
+          if (mathChallengeSec) mathChallengeSec.classList.remove("hidden");
+          if (conclusionSec) conclusionSec.classList.add("hidden");
+
+          document.getElementById("number-meaning-val").textContent =
+            data.number;
+          document.getElementById("number-meaning-desc").textContent =
+            data.numberMeaning;
+        }
+
+        document.getElementById("story-content-body").innerHTML = data.bodyHtml;
+
+        // Ảnh tư liệu
+        const mainImg = document.getElementById("story-main-image");
+        const caption = document.getElementById("story-image-caption");
+        if (data.imageSrc) {
+          mainImg.src = data.imageSrc;
+          mainImg.alt = data.title;
+          caption.textContent =
+            data.imageCaption || `Hình ảnh tư liệu: ${data.title}`;
+          document
+            .getElementById("story-image-wrapper")
+            .classList.remove("hidden");
+        } else {
+          document
+            .getElementById("story-image-wrapper")
+            .classList.add("hidden");
+        }
+
+        // Video tư liệu
+        const videoBox = document.getElementById("story-video-player-box");
+        const videoContainer = document.getElementById("story-video-container");
+        if (data.videoSrc && data.videoSrc.trim() !== "") {
+          videoContainer.classList.remove("hidden");
+          if (
+            data.videoSrc.includes("youtube.com") ||
+            data.videoSrc.includes("youtu.be")
+          ) {
+            let embedUrl = data.videoSrc;
+            if (embedUrl.includes("watch?v=")) {
+              embedUrl = embedUrl.replace("watch?v=", "embed/");
+            }
+            videoBox.innerHTML = `
+              <iframe class="w-full h-full" src="${embedUrl}" title="Video tư liệu" 
+                      frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            `;
+          } else {
+            videoBox.innerHTML = `
+              <video controls class="w-full h-full bg-black">
+                <source src="${data.videoSrc}" type="video/mp4">
+                Trình duyệt không hỗ trợ thẻ phát video.
+              </video>
+            `;
+          }
+        } else {
+          videoContainer.classList.add("hidden");
+          videoBox.innerHTML = "";
+        }
+
+        // Cập nhật Audio Thẻ
+        const audioSourceInfo = document.getElementById("audio-source-info");
+        audioSourceInfo.innerHTML = `File: <span class="font-mono text-brand-crimson font-medium">${data.audioSrc || "Giọng đọc AI"}</span>`;
+
+        if (!nativeAudio) {
+          nativeAudio = document.getElementById("story-native-audio");
+          setupAudioListeners();
+        }
+        nativeAudio.src = data.audioSrc || "";
+        nativeAudio.load();
+        resetAudioUI();
+
+        // Nút chuyển thẻ
+        const prevBtn = document.getElementById("btn-prev-card");
+        const nextBtn = document.getElementById("btn-next-card");
+
+        if (isConclusion) {
+          prevBtn.innerHTML =
+            '<i class="fa-solid fa-chevron-left mr-1"></i> Thẻ 9';
+          prevBtn.onclick = () => navigateTo("card-9");
+
+          nextBtn.innerHTML =
+            'Thẻ 1 <i class="fa-solid fa-chevron-right ml-1"></i>';
+          nextBtn.onclick = () => navigateTo("card-1");
+        } else {
+          const idx = data.cardIndex;
+          if (idx === 1) {
+            prevBtn.innerHTML =
+              '<i class="fa-solid fa-chevron-left mr-1"></i> Lời Kết';
+            prevBtn.onclick = () => navigateTo("conclusion");
+          } else {
+            prevBtn.innerHTML = `<i class="fa-solid fa-chevron-left mr-1"></i> Thẻ ${idx - 1}`;
+            prevBtn.onclick = () => navigateTo(`card-${idx - 1}`);
+          }
+
+          if (idx === 9) {
+            nextBtn.innerHTML =
+              'Lời Kết <i class="fa-solid fa-chevron-right ml-1"></i>';
+            nextBtn.onclick = () => navigateTo("conclusion");
+          } else {
+            nextBtn.innerHTML = `Thẻ ${idx + 1} <i class="fa-solid fa-chevron-right ml-1"></i>`;
+            nextBtn.onclick = () => navigateTo(`card-${idx + 1}`);
+          }
+        }
+
+        if (!isConclusion && data.mathChallenges) {
+          renderMathChallenges(data.mathChallenges);
+        }
+      }
+
+      function setupAudioListeners() {
+        const seekBar = document.getElementById("audio-seek-bar");
+        const timeDisplay = document.getElementById("audio-time-display");
+
+        nativeAudio.addEventListener("timeupdate", () => {
+          if (!isNaN(nativeAudio.duration) && nativeAudio.duration > 0) {
+            const progress =
+              (nativeAudio.currentTime / nativeAudio.duration) * 100;
+            seekBar.value = progress;
+            timeDisplay.textContent = formatAudioTime(nativeAudio.currentTime);
+          }
+        });
+
+        nativeAudio.addEventListener("ended", () => {
+          resetAudioUI();
+        });
+
+        nativeAudio.addEventListener("error", () => {
+          console.warn(
+            "Chưa tìm thấy tệp audio thẻ nội bộ. Hệ thống sẽ dùng Web Speech API khi bấm nghe.",
+          );
+        });
+      }
+
+      function formatAudioTime(seconds) {
+        const min = Math.floor(seconds / 60);
+        const sec = Math.floor(seconds % 60);
+        return `${min < 10 ? "0" : ""}${min}:${sec < 10 ? "0" : ""}${sec}`;
+      }
+
+      function onAudioSeek(value) {
+        if (nativeAudio && !isNaN(nativeAudio.duration)) {
+          nativeAudio.currentTime = (value / 100) * nativeAudio.duration;
+        }
+      }
+
+      function toggleAudioPlayback() {
+        stopIntroAudioPlayback(); // Ngắt audio lời ngỏ nếu đang phát
+
+        const data = storiesData[currentActiveCard];
+        if (!data) return;
+
+        if (!nativeAudio) {
+          nativeAudio = document.getElementById("story-native-audio");
+          setupAudioListeners();
+        }
+
+        if (!nativeAudio.paused) {
+          nativeAudio.pause();
+          updateAudioUI(false);
+        } else if (isSpeaking) {
+          stopSpeechSynthesis();
+          isSpeaking = false;
+          updateAudioUI(false);
+        } else {
+          const playPromise = nativeAudio.play();
+          if (playPromise !== undefined) {
+            playPromise
+              .then(() => {
+                updateAudioUI(true);
+              })
+              .catch((err) => {
+                console.log(
+                  "Dùng giọng đọc Web Speech API do lỗi phát tệp thẻ:",
+                  err,
+                );
+                startSpeechSynthesis(data.audioText, () => {
+                  isSpeaking = false;
+                  updateAudioUI(false);
+                });
+                isSpeaking = true;
+                updateAudioUI(true);
+              });
+          } else {
+            startSpeechSynthesis(data.audioText, () => {
+              isSpeaking = false;
+              updateAudioUI(false);
+            });
+            isSpeaking = true;
+            updateAudioUI(true);
+          }
+        }
+      }
+
+      function stopAudioPlayback() {
+        if (nativeAudio && !nativeAudio.paused) {
+          nativeAudio.pause();
+          nativeAudio.currentTime = 0;
+        }
+        if (isSpeaking) {
+          stopSpeechSynthesis();
+          isSpeaking = false;
+        }
+        resetAudioUI();
+      }
+
+      function resetAudioUI() {
+        updateAudioUI(false);
+        const seekBar = document.getElementById("audio-seek-bar");
+        const timeDisplay = document.getElementById("audio-time-display");
+        if (seekBar) seekBar.value = 0;
+        if (timeDisplay) timeDisplay.textContent = "00:00";
+      }
+
+      function updateAudioUI(playing) {
+        const icon = document.getElementById("audio-icon");
+        const badge = document.getElementById("audio-status-badge");
+        const waveBars = document.querySelectorAll(
+          ".wave-bar:not(.intro-wave-bar)",
+        );
+
+        if (playing) {
+          if (icon) icon.className = "fa-solid fa-pause";
+          if (badge) {
+            badge.textContent = "Đang phát audio...";
+            badge.className =
+              "text-[10px] px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-bold border border-emerald-300";
+          }
+          waveBars.forEach((wb) => (wb.style.animationPlayState = "running"));
+        } else {
+          if (icon) icon.className = "fa-solid fa-play ml-0.5";
+          if (badge) {
+            badge.textContent = "Sẵn sàng phát";
+            badge.className =
+              "text-[10px] px-2.5 py-0.5 rounded-full bg-stone-200 text-stone-700 font-semibold";
+          }
+          waveBars.forEach((wb) => (wb.style.animationPlayState = "paused"));
+        }
+      }
+
+      // Giọng đọc Web Speech API dùng chung
+      function startSpeechSynthesis(text, onEndCallback) {
+        if (!("speechSynthesis" in window)) return;
+        window.speechSynthesis.cancel();
+
+        speechUtterance = new SpeechSynthesisUtterance(text);
+        speechUtterance.lang = "vi-VN";
+        speechUtterance.rate = 0.95;
+
+        const voices = window.speechSynthesis.getVoices();
+        const viVoice = voices.find(
+          (v) => v.lang.includes("vi") || v.lang.includes("VN"),
+        );
+        if (viVoice) speechUtterance.voice = viVoice;
+
+        speechUtterance.onend = () => {
+          if (onEndCallback) onEndCallback();
+        };
+        speechUtterance.onerror = () => {
+          if (onEndCallback) onEndCallback();
+        };
+
+        window.speechSynthesis.speak(speechUtterance);
+      }
+
+      function stopSpeechSynthesis() {
+        if ("speechSynthesis" in window) {
+          window.speechSynthesis.cancel();
+        }
+      }
+
+      // ================= CÂU HỎI TOÁN HỌC =================
+      function renderMathChallenges(challenges) {
+        const container = document.getElementById("math-challenges-container");
+        const scoreBoard = document.getElementById("math-score-board");
+        scoreBoard.classList.add("hidden");
+        container.innerHTML = "";
+
+        challenges.forEach((q, qIdx) => {
+          const cardBox = document.createElement("div");
+          cardBox.className =
+            "p-5 rounded-2xl bg-amber-50/40 border border-amber-200/80 shadow-sm space-y-4";
+          cardBox.id = `box-${q.id}`;
+
+          let optionsHtml = "";
+          q.options.forEach((opt, optIdx) => {
+            optionsHtml += `
+            <button onclick="checkAnswer('${q.id}', ${optIdx}, ${q.correctIndex})" 
+                    id="btn-${q.id}-${optIdx}" 
+                    class="opt-btn-${q.id} w-full text-left p-3.5 rounded-xl border border-stone-200 bg-white text-xs sm:text-sm font-medium hover:border-amber-400 hover:bg-amber-50/50 transition-all flex items-center justify-between shadow-xs">
+              <span><strong class="text-brand-crimson mr-2">${String.fromCharCode(65 + optIdx)}.</strong> ${opt}</span>
+              <i class="fa-regular fa-circle text-stone-300 opt-icon"></i>
+            </button>
+          `;
+          });
+
+          cardBox.innerHTML = `
+          <div class="flex items-start justify-between gap-3">
+            <h4 class="font-semibold text-slate-900 text-sm sm:text-base leading-snug">
+              <span class="text-xs bg-amber-200/80 text-amber-900 px-2.5 py-1 rounded-md font-bold mr-1.5 border border-amber-300">Câu ${qIdx + 1}</span>
+              ${q.question}
+            </h4>
+          </div>
+          <div class="space-y-2.5">
+            ${optionsHtml}
+          </div>
+          <div id="feedback-${q.id}" class="hidden p-3.5 rounded-xl text-xs leading-relaxed font-medium"></div>
+        `;
+
+          container.appendChild(cardBox);
+        });
+      }
+
+      function checkAnswer(questionId, chosenIdx, correctIdx) {
+        const buttons = document.querySelectorAll(`.opt-btn-${questionId}`);
+        const feedback = document.getElementById(`feedback-${questionId}`);
+        const data = storiesData[currentActiveCard];
+        const challenge = data.mathChallenges.find((c) => c.id === questionId);
+
+        buttons.forEach((btn) => (btn.disabled = true));
+
+        const chosenBtn = document.getElementById(
+          `btn-${questionId}-${chosenIdx}`,
+        );
+        const correctBtn = document.getElementById(
+          `btn-${questionId}-${correctIdx}`,
+        );
+
+        if (chosenIdx === correctIdx) {
+          chosenBtn.className = chosenBtn.className.replace(
+            "border-stone-200 bg-white",
+            "border-emerald-500 bg-emerald-50 text-emerald-950 font-bold ring-1 ring-emerald-500",
+          );
+          chosenBtn.querySelector(".opt-icon").className =
+            "fa-solid fa-circle-check text-emerald-600 text-base";
+          feedback.className =
+            "p-3.5 rounded-xl text-xs bg-emerald-50 text-emerald-900 border border-emerald-300";
+          feedback.innerHTML = `<strong>Chính xác! 🎉</strong> ${challenge.explanation}`;
+        } else {
+          chosenBtn.className = chosenBtn.className.replace(
+            "border-stone-200 bg-white",
+            "border-rose-400 bg-rose-50 text-rose-950 font-medium",
+          );
+          chosenBtn.querySelector(".opt-icon").className =
+            "fa-solid fa-circle-xmark text-rose-600 text-base";
+          correctBtn.className = correctBtn.className.replace(
+            "border-stone-200 bg-white",
+            "border-emerald-500 bg-emerald-50 text-emerald-950 font-bold ring-1 ring-emerald-500",
+          );
+          correctBtn.querySelector(".opt-icon").className =
+            "fa-solid fa-circle-check text-emerald-600 text-base";
+          feedback.className =
+            "p-3.5 rounded-xl text-xs bg-amber-50 text-amber-950 border border-amber-300";
+          feedback.innerHTML = `<strong>Chưa chính xác!</strong> Lời giải: ${challenge.explanation}`;
+        }
+
+        feedback.classList.remove("hidden");
+
+        const totalQuestions = data.mathChallenges.length;
+        let answeredCount = 0;
+        data.mathChallenges.forEach((ch) => {
+          if (
+            !document
+              .getElementById(`feedback-${ch.id}`)
+              .classList.contains("hidden")
+          ) {
+            answeredCount++;
+          }
+        });
+        if (answeredCount === totalQuestions) {
+          document
+            .getElementById("math-score-board")
+            .classList.remove("hidden");
+        }
+      }
+
+      function resetMathChallenges() {
+        const data = storiesData[currentActiveCard];
+        if (data) renderMathChallenges(data.mathChallenges);
+      }
+
+      function toggleMobileMenu() {
+        const menu = document.getElementById("mobileMenu");
+        const isHidden = menu.classList.toggle("hidden");
+        const toggle = document.getElementById("mobile-menu-toggle");
+        const icon = document.getElementById("mobile-menu-icon");
+        if (toggle) toggle.setAttribute("aria-expanded", !isHidden);
+        if (icon) {
+          icon.className = isHidden
+            ? "fa-solid fa-bars text-base"
+            : "fa-solid fa-xmark text-base";
+        }
+      }
+
+      // Khởi tạo trạng thái ban đầu
+      window.onload = function () {
+        document
+          .querySelectorAll(".wave-bar")
+          .forEach((wb) => (wb.style.animationPlayState = "paused"));
+        initIntroAudio();
+
+        // Cho phép lăn chuột dọc để cuộn ngang thanh menu desktop
+        const desktopNav = document.getElementById("main-desktop-nav");
+        if (desktopNav) {
+          desktopNav.addEventListener(
+            "wheel",
+            (e) => {
+              if (e.deltaY !== 0) {
+                e.preventDefault();
+                desktopNav.scrollLeft += e.deltaY * 0.8;
+              }
+            },
+            { passive: false },
+          );
+        }
+      };
+    </script>
+  </body>
+</html>
