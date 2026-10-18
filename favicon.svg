@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Gradient nền đỏ thắm hoàng gia -->
+    <radialGradient id="bgGrad" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#DC2626" />
+      <stop offset="45%" stop-color="#991B1B" />
+      <stop offset="85%" stop-color="#5A0E0E" />
+      <stop offset="100%" stop-color="#3F0708" />
+    </radialGradient>
+
+    <!-- Gradient ánh kim hoa sen -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FEF08A" />
+      <stop offset="25%" stop-color="#FDE047" />
+      <stop offset="60%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#B45309" />
+    </linearGradient>
+
+    <!-- Gradient cánh sen sáng -->
+    <linearGradient id="petalLight" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#FFFBEB" />
+      <stop offset="40%" stop-color="#FDE68A" />
+      <stop offset="100%" stop-color="#F59E0B" />
+    </linearGradient>
+
+    <!-- Gradient cánh sen bóng đổ -->
+    <linearGradient id="petalDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B" />
+      <stop offset="60%" stop-color="#D97706" />
+      <stop offset="100%" stop-color="#92400E" />
+    </linearGradient>
+
+    <!-- Gradient ngôi sao vàng tỏa sáng -->
+    <linearGradient id="starGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFDF0" />
+      <stop offset="35%" stop-color="#FDE047" />
+      <stop offset="100%" stop-color="#D97706" />
+    </linearGradient>
+
+    <!-- Hào quang trung tâm -->
+    <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FEF08A" stop-opacity="0.45" />
+      <stop offset="50%" stop-color="#F59E0B" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#991B1B" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Bộ lọc đổ bóng sâu cho biểu tượng -->
+    <filter id="dropShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#1A0203" flood-opacity="0.75" />
+    </filter>
+    <filter id="starGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="5" result="glow" />
+      <feComposite in="SourceGraphic" in2="glow" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Nền tròn biểu trưng cho Trời Tròn - Đất Vuông, sự viên mãn & đoàn kết -->
+  <circle cx="256" cy="256" r="248" fill="url(#bgGrad)" />
+
+  <!-- Vành đai hoa văn viền vàng kim đôi trang trọng -->
+  <circle cx="256" cy="256" r="242" fill="none" stroke="url(#goldGrad)" stroke-width="4" stroke-opacity="0.6" />
+  <circle cx="256" cy="256" r="232" fill="none" stroke="url(#goldGrad)" stroke-width="2.5" stroke-dasharray="6,4" stroke-opacity="0.7" />
+  <circle cx="256" cy="256" r="222" fill="none" stroke="url(#goldGrad)" stroke-width="5" />
+
+  <!-- Hào quang rạng rỡ từ tâm -->
+  <circle cx="256" cy="245" r="145" fill="url(#sunGlow)" />
+
+  <!-- NHÓM BIỂU TƯỢNG CHÍNH: ĐÀI SEN VÀ CÁNH SEN NỞ RỘ (Biểu trưng cho Bác Hồ - Làng Sen Kim Liên) -->
+  <g filter="url(#dropShadow)">
+    <!-- Cánh sen ngoài cùng bên trái -->
+    <path d="M 256 385 C 205 385 145 355 105 310 C 95 299 100 286 112 288 C 150 295 195 315 230 355 C 242 369 252 380 256 385 Z" fill="url(#petalDark)" opacity="0.85" />
+    <path d="M 256 385 C 190 380 130 335 90 270 C 82 257 93 246 104 252 C 145 275 198 298 245 350 Z" fill="url(#goldGrad)" opacity="0.9" />
+
+    <!-- Cánh sen ngoài cùng bên phải (đối xứng toán học) -->
+    <path d="M 256 385 C 307 385 367 355 407 310 C 417 299 412 286 400 288 C 362 295 317 315 282 355 C 270 369 260 380 256 385 Z" fill="url(#petalDark)" opacity="0.85" />
+    <path d="M 256 385 C 322 380 382 335 422 270 C 430 257 419 246 408 252 C 367 275 314 298 267 350 Z" fill="url(#goldGrad)" opacity="0.9" />
+
+    <!-- Cánh sen tầng giữa bên trái -->
+    <path d="M 256 390 C 200 375 140 315 125 240 C 122 225 136 218 144 228 C 175 268 215 310 256 350 Z" fill="url(#goldGrad)" />
+    <path d="M 256 390 C 215 365 170 300 162 225 C 160 210 176 205 183 218 C 208 260 236 305 256 352 Z" fill="url(#petalLight)" />
+
+    <!-- Cánh sen tầng giữa bên phải -->
+    <path d="M 256 390 C 312 375 372 315 387 240 C 390 225 376 218 368 228 C 337 268 297 310 256 350 Z" fill="url(#goldGrad)" />
+    <path d="M 256 390 C 297 365 342 300 350 225 C 352 210 336 205 329 218 C 304 260 276 305 256 352 Z" fill="url(#petalLight)" />
+
+    <!-- Cánh sen chính tâm ôm lấy ngôi sao -->
+    <path d="M 256 400 C 235 370 205 315 210 240 C 212 215 230 195 245 180 C 252 173 260 173 267 180 C 282 195 300 215 302 240 C 307 315 277 370 256 400 Z" fill="url(#goldGrad)" opacity="0.95" />
+    <path d="M 256 400 C 242 370 226 315 230 245 C 232 222 245 200 256 186 C 267 200 280 222 282 245 C 286 315 270 370 256 400 Z" fill="url(#petalLight)" />
+
+    <!-- Đế đài sen nâng đỡ vững chắc -->
+    <path d="M 195 400 C 220 412 292 412 317 400 C 326 396 324 408 315 413 C 285 430 227 430 197 413 C 188 408 186 396 195 400 Z" fill="url(#goldGrad)" />
+    <ellipse cx="256" cy="405" rx="55" ry="7" fill="#FEF08A" opacity="0.8" />
+  </g>
+
+  <!-- BIỂU TƯỢNG TRUNG TÂM: NGÔI SAO VÀNG 5 CÁNH (Tâm sen - Ánh sáng soi đường của Chủ tịch Hồ Chí Minh) -->
+  <g filter="url(#starGlow)">
+    <!-- Vầng sáng bao quanh ngôi sao -->
+    <circle cx="256" cy="218" r="42" fill="#FEF08A" opacity="0.25" />
+
+    <!-- Ngôi sao vàng 5 cánh tỷ lệ vàng chuẩn mực -->
+    <!-- Đỉnh 1: (256, 155) -->
+    <!-- Đỉnh 2: (293, 270) -->
+    <!-- Đỉnh 3: (196, 199) -->
+    <!-- Đỉnh 4: (316, 199) -->
+    <!-- Đỉnh 5: (219, 270) -->
+    <polygon points="256,152 274,208 333,208 285,243 303,299 256,264 209,299 227,243 179,208 238,208" fill="url(#starGrad)" stroke="#FEF08A" stroke-width="2" stroke-linejoin="round" />
+
+    <!-- Các mảng khối vát 3D của ngôi sao giúp sáng bóng rực rỡ ở kích thước nhỏ -->
+    <polygon points="256,152 256,238 274,208" fill="#FFFDF0" opacity="0.5" />
+    <polygon points="333,208 256,238 285,243" fill="#B45309" opacity="0.35" />
+    <polygon points="303,299 256,238 256,264" fill="#B45309" opacity="0.4" />
+    <polygon points="209,299 256,238 227,243" fill="#FFFDF0" opacity="0.4" />
+    <polygon points="179,208 256,238 238,208" fill="#FFFDF0" opacity="0.6" />
+
+    <!-- Tâm ngọc rực sáng -->
+    <circle cx="256" cy="238" r="4.5" fill="#FFFFFF" />
+  </g>
+</svg>
